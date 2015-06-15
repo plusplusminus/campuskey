@@ -1,0 +1,77 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		<div class="jumbotron text-center">
+			<h1><strong>Book Now</strong></h1>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+
+			{% for faq in model.faqs %}
+			<div class="panel-heading">
+				<a data-toggle="collapse" href="#collapse{{ faq.id }}">{{ faq.q }}</a>
+			</div>
+			<div class="panel-body collapse {{ faq.state }}" id="collapse{{ faq.id }}">
+				<p>
+					{{ faq.a }}
+				</p>
+			</div>
+			{% endfor %}
+
+		</div><!--/.panel-->
+	</div><!--/.col=-md-4-->
+	
+	<div class="col-md-7 col-md-offset-1">
+
+		<p class="lead">Our Stellenbosch properties are all fully booked for 2015 occupation, but we have an exciting new property we will launch for 2016 occupation!</p>
+		<p>To get more details please complete a Booking Form to submit your details and receive the news first on launch dates and availability.</p>
+		<p><strong>Please complete the fields in the general enquiry form below!</strong></p>
+
+		<br><br>
+
+
+		<form class="well">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Name &amp; Surname*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email Address*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Mobile Number*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Campus*</label>
+		    <select class="form-control">
+		    {% for campus in model.campuses %}
+		      <option>{{ campus.name }}</option>
+			{% endfor %}
+		    </select>
+		  </div>
+
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Room Type*</label>
+		    <select class="form-control">
+		    {% for room in model.rooms %}
+		      <option>{{ room.type }}</option>
+			{% endfor %}
+		    </select>
+		  </div>
+
+		  <button type="submit" class="btn btn-primary">Submit Booking Enquiry</button>
+		</form>
+	</div>
+</div><!--/.row-->
+
+{% endblock %}

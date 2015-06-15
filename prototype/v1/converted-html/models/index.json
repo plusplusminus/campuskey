@@ -1,0 +1,75 @@
+{
+	"campuses": [
+		{
+			"name": "Stellenbosch",
+			"col": "6"
+		},
+		{
+			"name": "Cape Town",
+			"col": "3"
+		},
+		{
+			"name": "Potchefstroom",
+			"col": "3"
+		},
+		{
+			"name": "Port Elizabeth",
+			"col": "3"
+		},
+		{
+			"name": "Bloemfontein",
+			"col": "3"
+		},
+		{
+			"name": "Pretoria",
+			"col": "6"
+		}
+	],
+
+	"features": [
+		{
+			"name": "Clubhouse",
+			"description": "",
+			"icon": "coffee"
+		},
+		{
+			"name": "Private Gym",
+			"description": "",
+			"icon": "heartbeat"
+		},
+		{
+			"name": "Free Wi-fi",
+			"description": "",
+			"icon": "wifi"
+		},
+		{
+			"name": "Braai Areas",
+			"description": "",
+			"icon": "fire"
+		},
+		{
+			"name": "Laundry",
+			"description": "",
+			"icon": "plug"
+		},
+		{
+			"name": "Gardens",
+			"description": "",
+			"icon": "leaf"
+		}
+	],
+	"newsitems": [
+		{
+			"title": "Ligula Justo Fermentum Ligula Justo",
+			"date": "23 July 2015",
+			"cat": "News",
+			"body": "Nullam id dolor id nibh ultricies vehicula ut id elit. Sit amet fermentum. posuere velit aliquet."
+		},
+		{
+			"title": "Ridiculus Sit Purus Cursus Purus Cursus",
+			"date": "15 July 2015",
+			"cat": "Update",
+			"body": "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus."
+		}
+	]
+}

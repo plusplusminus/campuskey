@@ -1,0 +1,47 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		<div class="jumbotron text-center">
+			<h1><strong>Choose Your<br>Campus to Explore!</strong></h1>
+			<br>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p>Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="text-center">Choose Your Campus</h3>
+		<br>
+	</div>
+
+	{% for campus in model.campuses %}
+		<div class="col-md-{{ campus.col }}">
+			<a href="campus-single">
+				<div style="background-color: #f1f1f1;">
+					<br><br><br><br><br>
+					<h4 class="text-center">{{ campus.name }}</h4>
+					<br><br><br><br><br>
+				</div>
+			</a>
+			<br>	
+		</div>
+	{% endfor %}
+</div><!--/.row-->
+
+<br>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3567685.164721911!2d24.5843362!3d-29.1626818!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1434180123677"></iframe>
+		</div>
+	</div>
+</div><!--/.row-->
+
+{% endblock %}

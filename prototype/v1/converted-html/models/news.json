@@ -1,0 +1,22 @@
+{
+	"newsitems": [
+		{
+			"title": "Ligula Nullam Risus",
+			"text": "Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
+			"date": "23 Jul 2015",
+			"cat": "News"
+		},
+		{
+			"title": "Risus Lorem Nullam Ridiculus",
+			"text": "Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.",
+			"date": "2 Jul 2015",
+			"cat": "Update"
+		},
+		{
+			"title": "Cursus Egestas",
+			"text": "Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+			"date": "15 Jun 2015",
+			"cat": "Announcement"
+		}
+	]
+}

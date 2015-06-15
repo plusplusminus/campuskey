@@ -1,0 +1,83 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		{% include "jumbotron" %}
+	</div>
+</div><!--/.row-->
+
+<br>
+
+<div class="row">
+	<div class="col-md-8">
+		{% include "carousel" %}
+	</div>
+
+	<div class="col-md-4">
+		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Aenean eu leo quam.</p>
+		<p>Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>	
+		<ul>
+			<li>Maecenas sed diam eget risus varius</li>
+			<li>landit sit amet non magna</li>
+			<li>Cras justo odio, dapibus ac facilisis in.</li>
+			<li>egestas eget quam. Fusce dapibus</li>
+			<li>tellus ac cursus commodo</li>
+		</ul>
+		<br>
+		<p><a href="book" class="btn btn-primary btn-block">Book Now <i class="fa fa-long-arrow-right"></i></a></p>
+	</div>
+</div><!--/.row-->
+
+<br>
+
+<div class="row">
+
+	<div class="col-md-12">
+		<h4 class="text-center page-header">All Room Types</h4>
+		{% for room in model.rooms %}
+			<div class="col-md-4">
+				<a href="room-single">
+					<div style="background-color: #f1f1f1;">
+						<br><br><br><br>
+						<h4 class="text-center">{{ room.type }}</h4>
+						<p class="text-center">{{ room.description }}</p>
+						<br><br><br><br>
+					</div>
+				</a>
+				<br>	
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="col-md-6">
+		<h4 class="text-center page-header">Building Floor Plan</h4>			
+			<p><a href="#" data-toggle="modal" data-target="#buildingModal"><img class="img-responsive" src="holder.js/640x310?text=Image"></a></p>
+	</div>
+
+	<div class="col-md-6">
+		<h4 class="text-center page-header">Campus Map</h4>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3567685.164721911!2d24.5843362!3d-29.1626818!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sza!4v1434180123677"></iframe>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<!-- Modal -->
+<div class="modal fade" id="buildingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Building Floor Plan</h4>
+      </div>
+      <div class="modal-body">
+        <p><img class="img-responsive" src="holder.js/1020x560?text=Image"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

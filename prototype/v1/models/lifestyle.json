@@ -1,0 +1,93 @@
+{
+	"campuses": [
+		{
+			"name": "Stellenbosch",
+			"col": "6"
+		},
+		{
+			"name": "Cape Town",
+			"col": "3"
+		},
+		{
+			"name": "Potchefstroom",
+			"col": "3"
+		},
+		{
+			"name": "Port Elizabeth",
+			"col": "3"
+		},
+		{
+			"name": "Bloemfontein",
+			"col": "3"
+		},
+		{
+			"name": "Pretoria",
+			"col": "6"
+		}
+	],
+	"rooms": [
+		{
+			"type": "Studio Premier",
+			"description": "Furnished en-suite single room"
+		},
+		{
+			"type": "Studio Deluxe",
+			"description": "Furnished en-suite with shared kitchen for two students"
+		},
+		{
+			"type": "Cluster",
+			"description": "Furnished with own room, shared bathroom and kitchen"
+		}
+	],
+	"features": [
+		{
+			"name": "Clubhouse",
+			"description": "",
+			"icon": "coffee"
+		},
+		{
+			"name": "Private Gym",
+			"description": "",
+			"icon": "heartbeat"
+		},
+		{
+			"name": "Free Wi-fi",
+			"description": "",
+			"icon": "wifi"
+		},
+		{
+			"name": "Braai Areas",
+			"description": "",
+			"icon": "fire"
+		},
+		{
+			"name": "Laundry",
+			"description": "",
+			"icon": "plug"
+		},
+		{
+			"name": "Gardens",
+			"description": "",
+			"icon": "leaf"
+		}
+	],
+	"partners": [
+		{
+			"name": "Nedbank",
+			"description": ""
+		},
+		{
+			"name": "Afrihost",
+			"description": ""
+		},
+		{
+			"name": "MTN",
+			"description": ""
+		},
+		{
+			"name": "Uber",
+			"description": ""
+		}
+	]
+}
+

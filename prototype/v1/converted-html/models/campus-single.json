@@ -1,0 +1,56 @@
+{
+	"buildings": [
+		{
+			"name": "Azzurro"
+		},
+		{
+			"name": "Bordeaux"
+		},
+		{
+			"name": "Giallo"
+		},
+		{
+			"name": "Laranja"
+		},
+		{
+			"name": "Rosso"
+		},
+		{
+			"name": "Verde"
+		}
+	],
+	"rooms": [
+		{
+			"type": "Studio Premier",
+			"description": "Furnished en-suite single room"
+		},
+		{
+			"type": "Studio Deluxe",
+			"description": "Furnished en-suite with shared kitchen for two students"
+		},
+		{
+			"type": "Cluster",
+			"description": "Furnished with own room, shared bathroom and kitchen"
+		}
+	],
+	"newsitems": [
+		{
+			"title": "Ligula Justo Fermentum Ligula Justo",
+			"date": "23 July 2015",
+			"cat": "News",
+			"body": "Nullam id dolor id nibh ultricies vehicula ut id elit. Sit amet fermentum. posuere velit aliquet."
+		},
+		{
+			"title": "Ridiculus Sit Purus Cursus Purus Cursus",
+			"date": "15 July 2015",
+			"cat": "Update",
+			"body": "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus."
+		},
+		{
+			"title": "Ornare Malesuada Adipiscing Ornare Malesuada",
+			"date": "23 Jun 2015",
+			"cat": "Announcement",
+			"body": "Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus."
+		}
+	]
+}

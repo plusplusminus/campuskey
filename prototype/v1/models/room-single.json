@@ -1,0 +1,57 @@
+{
+	"features": [
+		{
+			"name": "Flat Screen TV",
+			"icon": "laptop"
+		},
+		{
+			"name": "Microwave",
+			"icon": "photo"
+		},
+		{
+			"name": "Panel Heaters",
+			"icon": "bookmark"
+		},
+		{
+			"name": "Shower &amp Toilet",
+			"icon": "bed"
+		},
+		{
+			"name": "Fridge &amp Freezer",
+			"icon": "life-ring"
+		},
+		{
+			"name": "Kettle",
+			"icon": "trash-o"
+		}
+	],
+	"morefeatures": [
+		{
+			"name": "Bed and quality mattress "
+		},
+		{
+			"name": "Curtains"
+		},
+		{
+			"name": "Study table, bookcases and a chair"
+		},
+		{
+			"name": "Snappy Chef Induction cooker"
+		},
+		{
+			"name": "Electrical towel rail "
+		},
+		{
+			"name": "Built in cupboards "
+		},
+		{
+			"name": "Breakfast nook "
+		},
+		{
+			"name": "Pinup board  "
+		},
+		{
+			"name": "Kitchen dry rack "
+		}
+	]
+}
