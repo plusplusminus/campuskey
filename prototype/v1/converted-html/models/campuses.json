@@ -1,0 +1,29 @@
+{
+	"campuses": [
+		{
+			"name": "Stellenbosch",
+			"col": "6"
+		},
+		{
+			"name": "Cape Town",
+			"col": "3"
+		},
+		{
+			"name": "Potchefstroom",
+			"col": "3"
+		},
+		{
+			"name": "Port Elizabeth",
+			"col": "3"
+		},
+		{
+			"name": "Bloemfontein",
+			"col": "3"
+		},
+		{
+			"name": "Pretoria",
+			"col": "6"
+		}
+	]
+}
+

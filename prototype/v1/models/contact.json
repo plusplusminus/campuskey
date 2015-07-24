@@ -1,0 +1,59 @@
+{
+	"contacts": [
+		{
+			"id": "1",
+			"state": "in",
+			"title": "HEAD OFFICE <br>",
+			"person": "Jessica Smith <br>",
+			"address": "",
+			"mobile": "",
+			"tel": "0861-STUDENT <br>",
+			"email": "info@campuskey.co.za <br>"
+		},
+		{
+			"id": "2",
+			"title": "GENERAL MANAGER <br>",
+			"person": "J.P. van Wyk <br>",
+			"address": "",
+			"mobile": "",
+			"tel": "0861-STUDENT <br>",
+			"email": "jp@campuskey.co.za <br>"
+		},
+		{
+			"id": "3",
+			"title": "MARKETING MANAGER <br>",
+			"person": "Diana van der Merwe <br>",
+			"address": "",
+			"mobile": "xxx <br>",
+			"tel": "0861-STUDENT <br>",
+			"email": "diana@campuskey.co.za <br>"
+		},
+		{
+			"id": "4",
+			"title": "STELLENBOSCH CAMPUS <br>",
+			"person": "Niel Poolman and Shané Venter <br>",
+			"address": "2 Groeneweide Street, Stellenbosch <br>",
+			"mobile": "+27 79 922 7197<br>",
+			"tel": "0861-STUDENT <br>",
+			"email": "maties@campuskey.co.za <br>"
+		},
+		{
+			"id": "5",
+			"title": "POTCHEFSTROOM CAMPUS <br>",
+			"person": "Eben Labushagne <br>",
+			"address": "32 Steve Biko Street, Potchefstroom <br>",
+			"mobile": "+27 82 533 9577 <br>",
+			"tel": "0861-STUDENT <br>",
+			"email": "potch@campuskey.co.za <br>"
+		},
+		{
+			"id": "6",
+			"title": "BLOEMFONTEIN CAMPUS <br>",
+			"person": "Danie Keyter <br>",
+			"address": "238 Pres Paul Kruger Street, Bloemfontein <br>",
+			"mobile": "+27 79 410 5719 <br>",
+			"tel": "0861-STUDENT <br>",
+			"email": "kovsies@campuskey.co.za <br>"
+		}
+	]
+}

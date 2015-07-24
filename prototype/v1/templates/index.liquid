@@ -1,0 +1,101 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		<div class="jumbotron text-center">
+			<h1><strong>Your home.<br>Away from home.</strong></h1>
+			<br>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p>CampusKey has taken student housing to the next level - safe, private, spacious, well designed stylish units and the best amenities - what more could you ask for in a student apartment?</p>
+					<p><strong><em>CampusKey offers student accommodation with a difference.</em></strong></p>
+				</div>
+			</div>
+			<br>
+			<a href="book" class="btn btn-primary btn-lg">Book Now <i class="fa fa-long-arrow-right"></i></a>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h3 class="text-center">The <em>CampusKey</em> Lifestyle</h3>
+		<br>
+		{% for feature in model.features %}
+			<div class="col-md-2">
+				<div class="text-center">
+					<i class="fa fa-{{ feature.icon }} fa-4x"></i>
+					<h4>{{ feature.name }}</h4>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+
+	<div class="col-md-12">
+		<div class="text-center">
+			<br>
+			<a class="btn btn-default" href="lifestyle">Discover the lifestyle <i class="fa fa-long-arrow-right"></i></a>
+			<br><br>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<hr>
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="text-center">Choose Your Campus</h3>
+		<br>
+	</div>
+
+	{% for campus in model.campuses %}
+		<div class="col-md-{{ campus.col }}">
+			<a href="campus-single">
+				<div style="background-color: #f1f1f1;">
+					<br><br><br><br><br>
+					<h4 class="text-center">{{ campus.name }}</h4>
+					<br><br><br><br><br>
+				</div>
+			</a>
+			<br>	
+		</div>
+	{% endfor %}
+</div><!--/.row-->
+
+<hr>
+
+<div class="row">
+	<div class="col-md-12">
+		<h3 class="text-center">News &amp; Anouncements</h3>
+		<br>
+	</div>
+
+	<div class="col-md-10 col-md-offset-1">
+		<div class="row">
+			{% for news in model.newsitems %}
+				<div class="col-md-4">
+					<div class="list-group">
+						<a href="#" class="list-group-item">
+							<h4 class="list-group-item-heading">{{ news.title }}<br>
+							<small>{{ news.date }} | {{ news.cat }}</small></h4>
+							<hr>
+							<p class="list-group-item-text">{{ news.body }}<br><br>
+							Read more <i class="fa fa-long-arrow-right"></i></p>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+				<div class="col-md-4">
+					<div class="list-group">
+						<a href="#" class="list-group-item">
+							<img class="img-responsive" src="holder.js/300x240?text=Internal Banner 300x240">
+						</a>
+					</div>
+				</div>
+		</div>
+	</div>
+</div><!--/.row-->
+
+
+{% endblock %}

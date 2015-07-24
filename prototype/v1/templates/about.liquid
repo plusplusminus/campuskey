@@ -1,0 +1,39 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		<div class="jumbotron text-center">
+			<h1><strong>Who is <br><em>CampusKey?</em></strong></h1>
+			<br>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					{% include "vision" %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="list-group">
+		  <a href="about" class="list-group-item {% if mixture.url == "about" %}active{% endif %}">Our Story</a>
+		  <a href="about-team" class="list-group-item {% if mixture.url == "about-team" %}active{% endif %}">The Team</a>
+		  <a href="about-green" class="list-group-item {% if mixture.url == "about-green" %}active{% endif %}">Green Living</a>
+		</div>
+	</div>
+	
+	<div class="col-md-7 col-md-offset-1">
+		<h3 class="page-header">Our Title</h3>
+
+		<p class="lead">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+		<p><img class="img-responsive" src="holder.js/840x420?text=Image"></p>
+
+		<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.</p>
+
+		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+	</div>
+</div><!--/.row-->
+
+{% endblock %}

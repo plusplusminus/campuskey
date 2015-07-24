@@ -1,0 +1,56 @@
+{
+	"faqs": [
+		{
+			"id": "1",
+			"q": "Frequently Asked Question 1",
+			"a": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur."
+		},
+		{
+			"id": "2",
+			"q": "Frequently Asked Question 2",
+			"a": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros."
+		},
+		{
+			"id": "3",
+			"q": "Frequently Asked Question 3",
+			"a": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui."
+		}
+	],
+	"rooms": [
+		{
+			"type": "Please Select"
+		},
+		{
+			"type": "Studio Premier"
+		},
+		{
+			"type": "Studio Deluxe"
+		},
+		{
+			"type": "Cluster"
+		}
+	],
+	"campuses": [
+		{
+			"name": "Please Select"
+		},
+		{
+			"name": "Stellenbosch"
+		},
+		{
+			"name": "Cape Town"
+		},
+		{
+			"name": "Pretoria"
+		},
+		{
+			"name": "Port Elizabeth"
+		},
+		{
+			"name": "Potchefstroom"
+		},
+		{
+			"name": "Bloemfontein"
+		}
+	]
+}

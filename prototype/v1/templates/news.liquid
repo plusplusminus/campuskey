@@ -1,0 +1,42 @@
+{% block content %}
+<br><br>
+<div class="row">
+	<!-- todo: Affix the sidebar-->
+	<div class="col-md-4">
+		<div class="list-group">
+		  <a href="about-team" class="list-group-item active">All Categories</a>
+		  <a href="about" class="list-group-item">News</a>
+		  <a href="about-team" class="list-group-item ">Abouncements</a>
+		  <a href="about-green" class="list-group-item">Updates</a>
+		  <a href="about-green" class="list-group-item">Social Responsibility</a>
+		</div>
+
+		<div class="list-group">
+		  <a href="#" class="list-group-item active">All Campuses</a>
+		  <a href="#" class="list-group-item">Stellenbosch</a>
+		  <a href="#" class="list-group-item ">Cape Town</a>
+		  <a href="#" class="list-group-item">Potchefstroom</a>
+		  <a href="#" class="list-group-item">Bloemfontein</a>
+		  <a href="#" class="list-group-item">Pretoria</a>
+		  <a href="#" class="list-group-item">Port Elizabeth</a>
+		</div>
+		<hr>
+		<div class="text-center">
+			<img style="margin:auto;" class="img-responsive" src="holder.js/300x250?text=Internal Banner 300x250">
+		</div>
+	</div>
+	
+	<div class="col-md-7 col-md-offset-1">
+		{% for news in model.newsitems %}
+			<div class="news-item">
+				<h3 class="page-header">{{ news.title }}<br>
+				<small>{{ news.date }} | {{ news.cat }}</small></h3>
+				<p class="lead">{{ news.text }}</p>
+				<a href="news-single" class="btn btn-default">Read More <i class="fa fa-long-arrow-right"></i></a>
+			</div>
+			<hr>
+		{% endfor %}
+	</div>
+</div><!--/.row-->
+
+{% endblock %}

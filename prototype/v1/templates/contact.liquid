@@ -1,0 +1,63 @@
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+	<br>
+		<div class="jumbotron text-center">
+			<h1><strong>Contact Us</strong></h1>
+		</div>
+	</div>
+</div><!--/.row-->
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+
+			{% for contact in model.contacts %}
+			<div class="panel-heading">
+				<a data-toggle="collapse" href="#collapse{{ contact.id }}">{{ contact.title }}</a>
+			</div>
+			<div class="panel-body collapse {{ contact.state }}" id="collapse{{ contact.id }}">
+				<p>
+					{{ contact.person }}
+					{{ contact.address }}
+					{{ contact.mobile }}
+					{{ contact.tel }}
+					{{ contact.email }}
+				</p>
+			</div>
+			{% endfor %}
+
+		</div><!--/.panel-->
+	</div><!--/.col=-md-4-->
+	
+	<div class="col-md-7 col-md-offset-1">
+
+		<p class="lead">Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla.</p>
+
+		<br><br>
+		<form class="well">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Name &amp; Surname*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email Address*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Mobile Number*</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+		  </div>
+
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Your Message*</label>
+		    <textarea class="form-control" rows="3"></textarea>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Send Message</button>
+		</form>
+	</div>
+</div><!--/.row-->
+
+{% endblock %}
