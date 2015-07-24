@@ -1,0 +1,21 @@
+{
+  "name": "htwe",
+  "version": "0.0.0",
+  "authors": [
+    "Sergio Pellegrini <sergio@plusplusminus.co.za>"
+  ],
+  "description": "High Tea with Elephants",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "packery": "~1.4.1",
+    "flexboxgrid": "~6.2.0"
+  }
+}
