@@ -18,7 +18,7 @@ query_posts( $query_args );
 		  		<div class="campus-title-area-main">
 					<div class="campus-home-title-1"> Your new home </div>
 					<div class="clear"></div>
-					<div class="campus-home-title-2"> <span>Choose your Campus!</span> </div>
+					<div class="campus_title css-orange"> <span>Choose your Campus!</span> </div>
 		  		</div>
 			</div>
 			<div class="campus-grid-area">
@@ -27,19 +27,7 @@ query_posts( $query_args );
 						<ul>
 							<?php while ( have_posts() ) : the_post(); $count++;?>
 								<div class="campus-grid-main col-md-6 col-sm-6">
-							  		<div class="campus-img"> 
-							  			<?php the_post_thumbnail('full',array('class'=>'img-responsive'));?>
-										<div class="slider-shadow"></div>
-							  		</div>
-							  		<div class="campus-title"> 
-							  			<a class="campus-title-scroll" href="<?php the_permalink();?>" title="<?php the_title();?>">
-										<div class="campus-text">
-								  			<h2><?php the_title();?></h2>
-								  			<div class="view-more"> View More <i class="icon-right-arrow"></i> </div>
-										</div>
-										<div class="campus-bg"></div>
-										</a> 
-									</div>
+							  		<?php get_template_part('templates/campuses/grid'); ?>
 								</div>
 							<?php endwhile; ?>
 						</ul>
@@ -50,4 +38,5 @@ query_posts( $query_args );
 			</div>
 	  	</div>
 	</div>
+	<div class="border-campus"></div>
 </section>

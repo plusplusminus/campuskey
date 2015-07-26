@@ -5,11 +5,13 @@
 ?>
 
 <?php get_header(); ?>
+	<div class="page-room">
+		<div class="inner">
+			<?php get_template_part('templates/rooms/archive'); ?>
+		</div>
 
-	<?php get_template_part('templates/section','header'); ?>
+		<div class="border-room"></div>
 
-	<?php get_template_part('templates/rooms/features','archive'); ?>
-
-	<?php get_template_part('templates/campuses/rooms'); ?>
+	</div>
 
 <?php get_footer(); ?>

@@ -11,22 +11,32 @@ query_posts( $query_args );
 
 ?>
 
-<section class="section_campuses">  
-	<div class="container">
-		<div class="campuses_heading">
-			<span class="campuses_heading--subtitle">Your new home</span>
-			<h2 class="campuses_heading--title">Choose your room</h2>
-		</div> 
-		<?php if ( have_posts() ) : $count = 0; ?>
-			<ul>
-				<?php while ( have_posts() ) : the_post(); $count++;?>
-				  	<li>
-				    	<?php the_title(); ?>
-				    </li>
-				<?php endwhile; ?>
-			</ul>
-		<?php endif; ?>
-		<?php wp_reset_query(); ?>
+<section class="page-room lifetyle-rooms">
+	<div class="inner">
+		<div class="container">
 
-	</div>	
-</section> <?php // end #wrapper ?>
+			<div class="header-title-area">
+		  		<div class="header-title-area-main">
+					<div class="header-title"> <span>Choose your room</span> </div>
+		  		</div>
+			</div>
+			<div class="section-grid-area">
+		  		<div class="container">
+		  			<?php if ( have_posts() ) : $count = 0; ?>
+						<ul>
+							<?php while ( have_posts() ) : the_post(); $count++;?>
+								<div class="room-grid-main">
+							  		<?php get_template_part('templates/rooms/grid'); ?>
+								</div>
+							<?php endwhile; ?>
+						</ul>
+					<?php endif; ?>
+					<?php wp_reset_query(); ?>
+					
+		  		</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="border-room"></div>
+</section>

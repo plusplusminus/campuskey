@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-	<?php get_template_part('templates/lifestyle/header'); ?>
+	<?php get_template_part('templates/section','header'); ?>
 
 	<?php get_template_part('templates/lifestyle/features-content'); ?>
 

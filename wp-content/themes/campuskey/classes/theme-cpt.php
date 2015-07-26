@@ -171,6 +171,14 @@ class ckCustomPostTypes {
 		    'type'    => 'textarea'
 		) );
 
+		$page_meta->add_field( array(
+		    'name' => 'Home Gallery',
+		    'desc' => '',
+		    'id'   => $prefix.'home_gallery',
+		    'type' => 'file_list',
+		    // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
+		) );
+
 
 	    $campus_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'campus_metabox',

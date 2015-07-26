@@ -15,52 +15,59 @@ $connected = new WP_Query( array(
 
 <main class="section_lifestyle"> 
 	<div class="container">
+		<?php
+		if ( have_posts() ) : $count = 0;
+		?>
 
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<?php
+			<?php while ( have_posts() ) : the_post(); $count++; ?>
+				<article class="lifestyle_content">
+					<?php the_content(); ?>
+				</article>
+			<?php endwhile; ?>
 
-					// Find connected pages
-					$connected = new WP_Query( array(
-					  'connected_type' => 'pages_to_features',
-					  'connected_items' => get_queried_object(),
-					  'nopaging' => true,
-					) );
 
-					// Display connected pages
-					if ( $connected->have_posts() ) :
-					?>
-					<section class="section_feature"> 
-						<div class="container">
-							<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-							    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-							<?php endwhile; ?>
+		<?php wp_reset_postdata(); endif; ?>
+
+		<div class="clearfix"></div>
+
+		<?php
+
+		// Find connected pages
+		$connected = new WP_Query( array(
+		  'connected_type' => 'pages_to_features',
+		  'connected_items' => get_queried_object(),
+		  'nopaging' => true,
+		) );
+
+		// Display connected pages
+		if ( $connected->have_posts() ) :
+		?>
+		<aside class="section_feature"> 
+
+			<ul class="feature_list">
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+				<li class="feature_list--item">
+					<div class="tab-ico"> 
+						<i class="icon-key"></i> 
+					</div>
+					<div class="tab-title">
+						<div class="display-table">
+							<div class="display-table-cell"><?php the_title(); ?></div>
 						</div>
-					</section>
-
-					<?php 
-					// Prevent weirdness
-					wp_reset_postdata();
-
-					endif;
-
-					?>
-				</div>
-			</div>
-
-
-			<?php
-			if ( have_posts() ) : $count = 0;
-			?>
-
-				<?php while ( have_posts() ) : the_post(); $count++; ?>
-					<article class="lifestyle_content">
-						<?php the_content(); ?>
-					</article>
+					</div>
+				</li>
 				<?php endwhile; ?>
+			</ul>
 
+		</aside>
 
-			<?php wp_reset_postdata(); endif; ?>
+		<?php 
+		// Prevent weirdness
+		wp_reset_postdata();
+
+		endif;
+
+		?>
 
 		</div>
 	</div>
