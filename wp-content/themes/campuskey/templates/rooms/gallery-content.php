@@ -85,7 +85,8 @@ $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_room_floorplan_
 							</li>
 						<?php else: ?>
 							 <?php if ($count == 6) : ?>
-							 	<h2 class="feature_list--heading">Also includes</h2>
+							 	<div class="clearfix"></div><br>
+							 	<li class="feature_list--list"><strong>Also included:</strong> </li>
 							 <?php endif; ?>
 							<li class="feature_list--list"><?php the_title(); ?></li>
 						<?php endif; ?>

@@ -67,7 +67,13 @@ function initMap() {
 
 jQuery(document).ready(function() {
 
-
+    jQuery('#accordion')
+      .on('show.bs.collapse', function(e) {
+        jQuery(e.target).prev('.list-group-item').addClass('active');
+      })
+      .on('hide.bs.collapse', function(e) {
+        jQuery(e.target).prev('.list-group-item').removeClass('active');
+    });
 
 
     jQuery(".header-nav > ul").children().each(function() {

@@ -3,7 +3,7 @@
 
 		<div class="header-title-area">
 	  		<div class="header-title-area-main">
-				<div class="header-title css-red"> <span><?php the_title();?></span> </div>
+				<div class="header-title css-yellow"> <span><?php the_title();?></span> </div>
 	  		</div>
 		</div>
 		<div class="header-subtitle">
