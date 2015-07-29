@@ -847,3 +847,38 @@ body .gform_wrapper {
     	background: @brand-blue;
     }
 }
+
+.section_news {
+	padding: 90px 0;
+	.header-title-area {
+		margin-bottom: 45px;
+	}
+
+	.article_blog {
+		.make-md-column(4,0);
+	}
+
+
+	.blog_image {
+		background: @brand-blue;
+		&.css-red {
+			background: @brand-red;
+		}
+		&.css-blue {
+			background: @brand-blue;
+		}
+		&.css-orange {
+			background: @brand-orange;
+		}
+		&.css-green {
+			background: @brand-orange;
+		}
+	}
+
+	.blog_content {
+		padding: 0px 30px;
+		margin-bottom: 35px;
+		color: #fff;
+		min-height: 200px;
+	}
+}

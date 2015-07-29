@@ -22,18 +22,22 @@ query_posts( $query_args );
 		<?php if ( have_posts() ) : ?>
 			<div class="row">
 				<?php while ( have_posts() ) : the_post(); ?>
-				  	<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-4'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+				  	<article id="post-<?php the_ID(); ?>" <?php post_class('article_blog'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				    	
 				    	<figure class="blog_image">
-				    		<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+				    		<?php the_post_thumbnail('blog-custom',array('class'=>'img-responsive')); ?>
 				    		<figcaption class="blog_content">
 
-			    				<h3 class="content_inner--title"><span><?php the_title(); ?></span></h3>
+				    					<span class="blog_category"><?php the_category(); ?></span>
+			    						<h3 class="content_inner--title"><span><?php the_title(); ?></span></h3>
 
-			    				<?php the_excerpt(); ?>
+			    						<?php the_excerpt();?>
+
+			    						<a class="blog_article--link" href="<?php the_permalink();?>">Find Out More</a>
+
 
 							</figcaption>
-							<a class="blog_article--link" href="<?php the_permalink();?>">&nbsp;</a>
+							
 						</figure>
 					</article>
 				<?php endwhile; ?>
