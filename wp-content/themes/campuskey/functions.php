@@ -41,6 +41,46 @@ function theme_slug_widgets_init() {
     'before_title'  => '<div class="section_widget--heading"><h3 class="section_widget--title">',
     'after_title'   => '</h3></div>',
     ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 1', 'theme-slug' ),
+        'id' => 'footer-sidebar-1',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 2', 'theme-slug' ),
+        'id' => 'footer-sidebar-2',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 3', 'theme-slug' ),
+        'id' => 'footer-sidebar-3',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 4', 'theme-slug' ),
+        'id' => 'footer-sidebar-4',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 
 add_filter('redux/options/tpb_options/sections', 'child_sections');

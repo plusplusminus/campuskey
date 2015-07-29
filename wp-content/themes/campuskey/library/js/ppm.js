@@ -67,6 +67,13 @@ function initMap() {
 
 jQuery(document).ready(function() {
 
+    var $container = jQuery('#container');
+    // init
+    $container.packery({
+      itemSelector: '.grid-item',
+      gutter: 0
+    });
+
     jQuery('#accordion')
       .on('show.bs.collapse', function(e) {
         jQuery(e.target).prev('.list-group-item').addClass('active');
@@ -169,19 +176,14 @@ jQuery(document).ready(function() {
 jQuery(window).load(function() {
     jQuery(".slider-container .slider-text").addClass("animation");
 
-    jQuery('.grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        // use element for option
-        columnWidth: 1,
-        percentPosition: true
-    });
 	jQuery('.bxslider').bxSlider({
         mode: 'fade',
         auto: true,
         autoControls: true,
 		touchEnabled: true,
-        pause: 5000
+        pause: 5000,
+        nextText: '<span class="fa fa-angle-right"></span>',
+        prevText: '<span class="fa fa-angle-left"></span>',
     });
 });
 jQuery(window).load(function() {
