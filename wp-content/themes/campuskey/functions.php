@@ -41,6 +41,56 @@ function theme_slug_widgets_init() {
     'before_title'  => '<div class="section_widget--heading"><h3 class="section_widget--title">',
     'after_title'   => '</h3></div>',
     ) );
+
+    register_sidebar( array(
+        'name' => __( 'About Page', 'theme-slug' ),
+        'id' => 'about-1',
+        'description' => __( 'Widgets in this area will be shown on about page sidebar area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 1', 'theme-slug' ),
+        'id' => 'footer-sidebar-1',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 2', 'theme-slug' ),
+        'id' => 'footer-sidebar-2',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 3', 'theme-slug' ),
+        'id' => 'footer-sidebar-3',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Block 4', 'theme-slug' ),
+        'id' => 'footer-sidebar-4',
+        'description' => __( 'Widgets in this area will be shown on home page footer area.', 'ck' ),
+        'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="section_widget--title">',
+        'after_title'   => '</h2>',
+    ) );
 }
 
 add_filter('redux/options/tpb_options/sections', 'child_sections');
@@ -283,8 +333,9 @@ function get_map() {
             while ( $query->have_posts() ) : $query->the_post(); $count++;
 
                 $location = get_post_meta($post->ID,'_ck_location',true);
-
-                $data[] =  array('location'=>$location,'title'=>get_the_title(),'url'=>get_permalink());
+                $image = get_post_meta($post->ID,'_ck_map_icon_id',true);
+                $image_url =  wp_get_attachment_image_src( $image,'full', $icon );
+                $data[] =  array('location'=>$location,'title'=>get_the_title(),'url'=>get_permalink(),'icon'=>$image_url[0]);
 
             endwhile;
         endif; 

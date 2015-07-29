@@ -7,40 +7,22 @@ $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_room_floorplan_
 ?>
 <main class="section_features"> 
 	<div class="container">
-		<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
-		<div class="row">
-
-			<?php if (!empty($image)) : ?>
-				<aside class="room_gallery col-md-12">
-
-					<?php $gallery = get_post_meta($post->ID,'_ck_room_gallery',true); ?>
-						<?php if(!empty($gallery)) :?>
-								<div class="flexslider">
-									<ul class="slides">
-										<?php foreach ($gallery as $key => $image) {
-
-											$image_attributes_large = wp_get_attachment_image_src( $key,'large' );
-											$image_attributes_full = wp_get_attachment_image_src( $key,'full' );
-											$attachment = get_post($key); 
-											?>
-											<li class="slide">
-												<figure class="slide_image">
-													<img alt="<? _e($attachment->post_title); ?>" src="<?php echo $image_attributes_large[0];?>" class="img-responsive"/>
-												</figure>
-											</li>
-
-										<?php } ?>
-									</ul>
-								</div>
-							</aside>
-						<?php else : ?>
-							<figure class="post-header_image">
-								<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
-							</figure>
-						<?php endif; ?>
-				</aside>
+		<aside class="room_gallery">
+			<?php $gallery = get_post_meta($post->ID,'_ck_room_gallery',true); ?>
+			<?php if (!empty($gallery)) : ?>
+				<ul class="bxslider">
+					<?php foreach ($gallery as $key => $image) : ?>
+						<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
+						<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php else : ?>
+				<figure class="post-header_image">
+					<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+				</figure>
 			<?php endif; ?>
-
+		</aside>
+		<div class="row">
 			<?php
 			if ( have_posts() ) : $count = 0;
 			?>

@@ -45,12 +45,22 @@ function initMap() {
 		        jQuery.each(data.data, function(){
 		        	var that = this;
 					//Plot the location as a marker
+                    var image = {
+                        url: that.icon,
+                        // This marker is 20 pixels wide by 32 pixels tall.
+                        size: new google.maps.Size(120, 35),
+                        // The origin for this image is 0,0.
+                        origin: new google.maps.Point(0,0),
+                        // The anchor for this image is the base of the flagpole at 0,32.
+                        anchor: new google.maps.Point(21, 35)
+                    };
 					var pos = new google.maps.LatLng(this.location.latitude, this.location.longitude); 
 					var marker = new google.maps.Marker({
                         position: pos,
                         map: map,
                         title: that.title,
-                        url: that.url
+                        url: that.url,
+                        icon: image
                     });
                     google.maps.event.addListener(marker, 'click', function() {
 					    window.location.href = this.url;
@@ -66,6 +76,13 @@ function initMap() {
 }
 
 jQuery(document).ready(function() {
+
+    var $container = jQuery('#container');
+    // init
+    $container.packery({
+      itemSelector: '.grid-item',
+      gutter: 0
+    });
 
     jQuery('#accordion')
       .on('show.bs.collapse', function(e) {
@@ -169,19 +186,14 @@ jQuery(document).ready(function() {
 jQuery(window).load(function() {
     jQuery(".slider-container .slider-text").addClass("animation");
 
-    jQuery('.grid').masonry({
-        // options
-        itemSelector: '.grid-item',
-        // use element for option
-        columnWidth: 1,
-        percentPosition: true
-    });
 	jQuery('.bxslider').bxSlider({
         mode: 'fade',
         auto: true,
         autoControls: true,
 		touchEnabled: true,
-        pause: 5000
+        pause: 5000,
+        nextText: '<span class="fa fa-angle-right"></span>',
+        prevText: '<span class="fa fa-angle-left"></span>',
     });
 });
 jQuery(window).load(function() {

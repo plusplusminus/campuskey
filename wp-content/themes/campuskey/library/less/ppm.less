@@ -22,8 +22,6 @@
 }
 
 
-
-
 .body-text(@align:left, @color:white){
 	font-family: @font-family-base;
 	font-size: @font-size-large;
@@ -636,8 +634,12 @@ body {
 		font-family: @font-famliy-script;
 		font-size: 1.6em;
 		background-color: @gray-light;
-		margin-bottom: 5px;
 		color: white;
+		margin-bottom: 5px;
+		a {
+			color: white;
+			display: block;
+		}
 		&:first-child{
 			border-radius: 0px;
 		}
@@ -659,11 +661,17 @@ body {
 			background-color: @brand-yellow;
 			.arrow(@brand-yellow);
 		}
-		.list-group-collapse&.active,
-		.list-group-collapse&.active:hover,
-		.list-group-collapse&.active:focus{
+		.list-group-collapse&.current-menu-item ,
+		.list-group-collapse&.current-menu-item:hover,
+		.list-group-collapse&.current-menu-item:focus{
 			background-color: @brand-yellow;
 		}
+		.list-group-static&.current-menu-item ,
+		.list-group-static&.current-menu-item :hover,
+		.list-group-static&.current-menu-item :focus{
+			background-color: @brand-yellow;
+			.arrow(@brand-yellow);
+		}			
 	}
 	&.list-group-collapse{
 		.list-group-item{
@@ -692,6 +700,8 @@ body {
 		}
 	}
 }
+
+
 
 // GRavity
 body .gform_wrapper {
@@ -748,4 +758,92 @@ body .gform_wrapper {
 			.btn-cta();
 		}
 	}
+}
+
+.slide {
+	background-position: center center; 
+	background-size: cover; 
+	height: 550px;
+}
+
+.campus_gallery {
+	margin-top: 35px;
+}
+
+.bx-wrapper .bx-controls-direction a span{
+	padding: 20px;
+	background-color: @brand-green;
+	opacity: 0.9;
+	border-radius: 100%;
+	font-size: 32px;
+	width: 72px;
+	height: 72px;
+	text-align: center;
+	color: #fff;
+}
+
+.bx-default-pager {
+	display: none;
+}
+
+.va-container {
+	display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.va-top, .va-middle, .va-bottom {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.grid-item {
+    width: 50%;
+    background-color: green;
+    &.w1 {
+    	width: 40%;
+    	height: 265px;
+    	background-image: url('../images/social-bg-1.jpg');
+    	background-size: cover;
+    	background-position: center;
+    }
+    &.w2 {
+    	width: 60%;
+    	height: 265px;
+    	background: @brand-green;
+    }
+    &.w3 {
+    	width: 40%;
+    	height: 350px;
+    	background: @brand-red;
+    }
+    &.w4 {
+    	width: 30%;
+    	height: 400px;
+    	background: @brand-orange;
+
+    }
+    &.w5 {
+    	width: 30%;
+    	height: 700px;
+    	background: @brand-red;
+    	background-image: url('../images/social-bg-3.jpg');
+    	background-size: cover;
+    	background-position: center;
+    }
+    &.w6 {
+    	width: 40%;
+    	height: 350px;
+    	background: @brand-blue;
+    	background-image: url('../images/social-bg-2.jpg');
+    	background-size: cover;
+    	background-position: center;
+    }
+    &.w7 {
+    	width: 30%;
+    	height: 300px;
+    	background: @brand-blue;
+    }
 }

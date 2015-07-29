@@ -207,6 +207,17 @@ class ckCustomPostTypes {
 			)
 	    );
 
+	    $campus_meta->add_field( array(
+			'name'    => 'Map Icon',
+			'desc'    => 'Upload an image or enter an URL.',
+			'id'      => $prefix . 'map_icon',
+			'type'    => 'file',
+			// Optionally hide the text input for the url:
+			'options' => array(
+				'url' => false,
+			),
+		) );
+
 	    
 	    $campus_meta->add_field( array(
 		    'name'    => 'Campus Contact Name',
@@ -375,7 +386,7 @@ class ckCustomPostTypes {
 	        'id'            => $prefix . 'contact_metabox',
 	        'title'         => __( 'Contact Meta', 'cmb2' ),
 	        'object_types'  => array( 'page', ), // Post type
-	        'show_on'      => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
+	        'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-contact.php' ),
 	        'context'       => 'normal',
 	        'priority'      => 'high',
 	        'show_names'    => true, // Show field names on the left
@@ -383,9 +394,126 @@ class ckCustomPostTypes {
 	        // 'closed'     => true, // true to keep the metabox closed by default
 	    ) );
 
-		  
+	    $group_field_id = $contact_meta->add_field( array(
+		    'id'          => $prefix.'contact_group',
+		    'type'        => 'group',
+		    'description' => __( 'Generates reusable form entries', 'cmb' ),
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb' ),
+		        'sortable'      => true, // beta
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Title',
+		    'id'   => 'title',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Name',
+		    'id'   => 'name',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Telephone',
+		    'id'   => 'telephone',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Email',
+		    'id'   => 'email',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Description',
+		    'description' => 'Write a short description for this entry',
+		    'id'   => 'description',
+		    'type' => 'textarea_small',
+		) );
+
+	  
 	}
 
 }
 global $cpt; 
 $cpt = new ckCustomPostTypes(); 
+
+add_action( 'widgets_init', create_function( '', 'register_widget( "PPM_Menu_Widget" );' ) );
+
+class PPM_Menu_Widget extends WP_Widget {
+ 
+	public function __construct() {
+		parent::__construct(
+	 		'ppm_newsletter_widget', // Base ID
+			'PPM Custom Menus Widget', // Name
+			array( 'description' => __( 'Custom options to output various menus')) // Args
+		);
+	}
+ 
+	public function widget( $args, $instance ) {
+		extract( $args );
+ 
+		$title = apply_filters( 'widget_title', $instance['title'] );
+ 
+		echo $before_widget;
+ 
+		if ( ! empty( $title ) )
+			echo $before_title . $title . $after_title;
+
+		wp_nav_menu( array('menu_class'=> 'list-group list-group-static','items_wrap'=>'<div id="%1$s" class="list-group list-group-static %2$s">%3$s</div>','menu' => $instance['menu_item'],'link_before' => '','link_after' => '', ) );
+ 
+		echo $after_widget;
+	}
+ 
+ 	public function form( $instance ) {
+ 
+		$title = isset($instance['title']) ? $instance['title'] : '';
+		$menu_item = isset($instance['menu_item']) ? $instance['menu_item'] : '';
+		$menus = get_terms('nav_menu');
+ 
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+ 
+		<p>
+			<label for="<?php echo $this->get_field_id( 'menu_item' ); ?>"><?php _e( 'Select Menu:' ); ?></label> 
+			<select class="widefat" id="<?php echo $this->get_field_id( 'menu_item' ); ?>" name="<?php echo $this->get_field_name( 'menu_item' ); ?>" >
+				<?php foreach($menus as $m){
+					if ($m->slug == $menu_item)
+					{
+					echo '<option value="'.$m->slug.'" selected>'.$m->name.'</option>';
+					}
+					else
+					{
+					echo '<option value="'.$m->slug.'">'.$m->name.'</option>';
+					}
+				} ?>
+			</select>
+		</p>
+ 
+		<?php 
+	}
+ 
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
+ 
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['menu_item'] = strip_tags( $new_instance['menu_item'] );
+ 
+		return $instance;
+	}
+}
+
