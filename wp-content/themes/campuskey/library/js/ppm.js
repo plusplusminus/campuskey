@@ -84,6 +84,16 @@ jQuery(document).ready(function() {
       gutter: 0
     });
 
+    var $blogcontainer = jQuery('#blog-container');
+    // init
+    $blogcontainer.packery({
+      itemSelector: '.article_blog',
+      gutter: 0
+    });
+
+
+    
+
     jQuery('#accordion')
       .on('show.bs.collapse', function(e) {
         jQuery(e.target).prev('.list-group-item').addClass('active');

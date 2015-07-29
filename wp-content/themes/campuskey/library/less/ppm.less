@@ -856,29 +856,63 @@ body .gform_wrapper {
 
 	.article_blog {
 		.make-md-column(4,0);
-	}
-
-
-	.blog_image {
-		background: @brand-blue;
-		&.css-red {
-			background: @brand-red;
-		}
-		&.css-blue {
-			background: @brand-blue;
-		}
-		&.css-orange {
-			background: @brand-orange;
-		}
-		&.css-green {
-			background: @brand-orange;
-		}
+		&:nth-child(n) {
+	    	background: @brand-blue;
+	    }
+	    &:nth-child(2n) {
+	    	background: @brand-green;
+	    }
+	    &:nth-child(3n) {
+	    	background: @brand-red;
+	    }
 	}
 
 	.blog_content {
-		padding: 0px 30px;
 		margin-bottom: 35px;
-		color: #fff;
 		min-height: 200px;
+	}
+
+
+	
+}
+
+.blog_image {
+
+
+}
+
+.blog_content {
+	padding: 20px 30px;
+	color: #fff;
+}
+
+.section_archive {
+
+	.header-title-area {
+		margin-bottom: 45px;
+	}
+
+	.article_blog {
+	    width: 50%;
+	    &:nth-child(n) {
+	    	background: @brand-blue;
+	    }
+	    &:nth-child(2n) {
+	    	background: @brand-green;
+	    }
+	    &:nth-child(3n) {
+	    	background: @brand-red;
+	    }
+	}
+
+	.blog_image {
+
+		
+	}
+
+	.blog_content {
+		padding: 20px 30px;
+		margin-bottom: 0;
+		color: #fff;
 	}
 }

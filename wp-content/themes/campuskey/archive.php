@@ -1,85 +1,101 @@
 <?php get_header(); ?>
 
-	<section class="section_page">  
-		<div class="container-fluid">
+	<?php global $post; ?>
 
-			<div class="page_content">
+	<div class="container page-container">
 
-				<div class="page_heading">
-					<?php if (is_category()) { ?>
-						<h1 class="page_heading--title">
-							<?php single_cat_title(); ?>
-						</h1>
+		<div class="inner">
+			<section class="header-page">
 
-					<?php } elseif (is_tag()) { ?>
-						<h1 class="page_heading--title">
-							<span><?php _e( 'Posts Tagged:', 'aevitas' ); ?></span> <?php single_tag_title(); ?>
-						</h1>
+					<div class="header-title-area">
+				  		<div class="header-title-area-main">
+							<?php if (is_category()) { ?>
+								<h1 class="header-title css-yellow"> <span>
+									<?php single_cat_title(); ?>
+								</span></h1>
 
-					<?php } elseif (is_author()) {
-						global $post;
-						$author_id = $post->post_author;
-					?>
-						<h1 class="page_heading--title">
+							<?php } elseif (is_tag()) { ?>
+								<h1 class="header-title css-yellow"> <span><?php _e( 'Posts Tagged:', 'aevitas' ); ?> <?php single_tag_title(); ?></span> </h1>
 
-							<span><?php _e( 'Posts By:', 'aevitas' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+							<?php } elseif (is_author()) {
+								global $post;
+								$author_id = $post->post_author;
+							?>
+								<h1 class="header-title css-yellow">
 
-						</h1>
-					<?php } elseif (is_day()) { ?>
-						<h1 class="page_heading--title">
-							<span><?php _e( 'Daily Archives:', 'aevitas' ); ?></span> <?php the_time('l, F j, Y'); ?>
-						</h1>
+									<span> <?php _e( 'Posts By:', 'aevitas' ); ?> <?php the_author_meta('display_name', $author_id); ?> </span>
 
-					<?php } elseif (is_month()) { ?>
-							<h1 class="page_heading--title">
-								<span><?php _e( 'Monthly Archives:', 'aevitas' ); ?></span> <?php the_time('F Y'); ?>
-							</h1>
+								</h1>
+							<?php } elseif (is_day()) { ?>
+								<h1 class="header-title css-yellow">
+									<span><?php _e( 'Daily Archives:', 'aevitas' ); ?> <?php the_time('l, F j, Y'); ?></span>
+								</h1>
 
-					<?php } elseif (is_year()) { ?>
-							<h1 class="page_heading--title">
-								<span><?php _e( 'Yearly Archives:', 'aevitas' ); ?></span> <?php the_time('Y'); ?>
-							</h1>
+							<?php } elseif (is_month()) { ?>
+									<h1 class="header-title css-yellow">
+										<span><?php _e( 'Monthly Archives:', 'aevitas' ); ?> <?php the_time('F Y'); ?> </span>
+									</h1>
 
-					<?php } elseif (is_post_type_archive()) { ?>
-							<h1 class="page_heading--title">
-								<?php post_type_archive_title(); ?>
-							</h1>
-					<?php } elseif( is_tax() ) {
-					    $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );;
-					    ?>
-						    <h1 class="page_heading--title">
-								<span><?php _e( $term->name, 'aevitas' ); ?></span>
-							</h1>
+							<?php } elseif (is_year()) { ?>
+									<h1 class="header-title css-yellow">
+										<span><?php _e( 'Yearly Archives:', 'aevitas' ); ?> <?php the_time('Y'); ?> </span>
+									</h1>
 
-					<?php } ?>
-				</div>
+							<?php } elseif (is_post_type_archive()) { ?>
+									<h1 class="header-title css-yellow">
+										<?php post_type_archive_title(); ?>
+									</h1>
+							<?php } elseif( is_tax() ) {
+							    $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );;
+							    ?>
+								    <h1 class="header-title css-yellow">
+										<span><?php _e( $term->name, 'aevitas' ); ?></span>
+									</h1>
+
+							<?php } ?>
+				  		</div>
+					</div>
+
+			</section>
+
+			<div class="page_container">
+				<aside class="section_sidebar">
+					<?php get_sidebar(); ?>
+				</aside>
+				<main class="section_article">
+
+					<section class="section_archive">  
+						
+						<?php if ( have_posts() ) : ?>
+							<div id="blog-container">
+								<?php while ( have_posts() ) : the_post(); ?>
+								  	<article id="post-<?php the_ID(); ?>" <?php post_class('article_blog'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+								    	
+								    	<figure class="blog_image">
+								    		<?php the_post_thumbnail('blog-custom',array('class'=>'img-responsive')); ?>
+								    		<figcaption class="blog_content">
+
+								    					<span class="blog_category"><?php the_category(); ?></span>
+							    						<h3 class="content_inner--title"><span><?php the_title(); ?></span></h3>
+
+							    						<?php the_excerpt();?>
+
+							    						<a class="blog_article--link" href="<?php the_permalink();?>">Find Out More</a>
+
+
+											</figcaption>
+											
+										</figure>
+									</article>
+								<?php endwhile; ?>
+							</div>
+						<?php endif; ?>
+						<?php wp_reset_query(); ?>
+					</section> <?php // end #wrapper ?>
+				</main>
 			</div>
-
-		</div>			
-	</section> <?php // end #wrapper ?>
-
-	<section class="section_grid">  
-		<div class="wrap container-fluid">
-			<div class="row">
-				<div class="col-md-8">
-					<?php if ( have_posts() ) : $count = 0; ?>
-						<div class="row">
-							<?php while ( have_posts() ) : the_post(); $count++;?>
-								<?php $class = get_grid_class($count); ?>
-							  	<article id="post-<?php the_ID(); ?>" <?php post_class($class); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-							    	<?php get_template_part('content',get_post_format()); ?>
-								</article>
-							<?php endwhile; ?>
-						</div>
-					<?php endif; ?>
-					<?php wp_reset_query(); ?>
-				</div>
-
-				<?php get_sidebar(); ?>
-
-			</div>
-		</div>	
-	</section> <?php // end #wrapper ?>
+		</div>
+	</div>
 
 
 <?php get_footer(); ?>
