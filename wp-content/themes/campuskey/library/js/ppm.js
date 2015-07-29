@@ -45,12 +45,22 @@ function initMap() {
 		        jQuery.each(data.data, function(){
 		        	var that = this;
 					//Plot the location as a marker
+                    var image = {
+                        url: that.icon,
+                        // This marker is 20 pixels wide by 32 pixels tall.
+                        size: new google.maps.Size(120, 35),
+                        // The origin for this image is 0,0.
+                        origin: new google.maps.Point(0,0),
+                        // The anchor for this image is the base of the flagpole at 0,32.
+                        anchor: new google.maps.Point(21, 35)
+                    };
 					var pos = new google.maps.LatLng(this.location.latitude, this.location.longitude); 
 					var marker = new google.maps.Marker({
                         position: pos,
                         map: map,
                         title: that.title,
-                        url: that.url
+                        url: that.url,
+                        icon: image
                     });
                     google.maps.event.addListener(marker, 'click', function() {
 					    window.location.href = this.url;

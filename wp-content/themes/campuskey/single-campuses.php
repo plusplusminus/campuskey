@@ -18,7 +18,7 @@
 
    	<?php get_template_part('templates/campuses/buildings'); ?>
 
-   	<?php get_template_part('templates/section','blog'); ?>
+   	<?php get_template_part('templates/section','news'); ?>
 
 
 <?php get_footer(); ?>

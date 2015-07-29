@@ -634,8 +634,12 @@ body {
 		font-family: @font-famliy-script;
 		font-size: 1.6em;
 		background-color: @gray-light;
-		margin-bottom: 5px;
 		color: white;
+		margin-bottom: 5px;
+		a {
+			color: white;
+			display: block;
+		}
 		&:first-child{
 			border-radius: 0px;
 		}
@@ -657,11 +661,17 @@ body {
 			background-color: @brand-yellow;
 			.arrow(@brand-yellow);
 		}
-		.list-group-collapse&.active,
-		.list-group-collapse&.active:hover,
-		.list-group-collapse&.active:focus{
+		.list-group-collapse&.current-menu-item ,
+		.list-group-collapse&.current-menu-item:hover,
+		.list-group-collapse&.current-menu-item:focus{
 			background-color: @brand-yellow;
 		}
+		.list-group-static&.current-menu-item ,
+		.list-group-static&.current-menu-item :hover,
+		.list-group-static&.current-menu-item :focus{
+			background-color: @brand-yellow;
+			.arrow(@brand-yellow);
+		}			
 	}
 	&.list-group-collapse{
 		.list-group-item{
@@ -690,6 +700,8 @@ body {
 		}
 	}
 }
+
+
 
 // GRavity
 body .gform_wrapper {
