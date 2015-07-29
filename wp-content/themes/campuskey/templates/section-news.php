@@ -25,15 +25,19 @@ query_posts( $query_args );
 				  	<article id="post-<?php the_ID(); ?>" <?php post_class('article_blog'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				    	
 				    	<figure class="blog_image">
-				    		<?php the_post_thumbnail('blog-custom',array('class'=>'img-responsive')); ?>
+				    		<a href="<?php the_permalink();?>">
+				    			<?php the_post_thumbnail('blog-custom',array('class'=>'img-responsive')); ?>
+				    		</a>
 				    		<figcaption class="blog_content">
 
-				    					<span class="blog_category"><?php the_category(); ?></span>
-			    						<h3 class="content_inner--title"><span><?php the_title(); ?></span></h3>
+				    					<span class="blog_category"><?php the_category(); ?></span> • <span class="blog_date"><?php the_time('F j, Y'); ?></span>
+			    						<h3 class="content_inner--title">
+			    							<a href="<?php the_permalink();?>"><span><?php the_title(); ?></span></a>
+			    						</h3>
 
 			    						<?php the_excerpt();?>
 
-			    						<a class="blog_article--link" href="<?php the_permalink();?>">Find Out More</a>
+			    						<a class="blog_article--link" href="<?php the_permalink();?>">Read more</a>
 
 
 							</figcaption>
