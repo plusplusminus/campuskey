@@ -1,5 +1,5 @@
 <?php
-
+global $post;
 // Find connected pages
 $connected = new WP_Query( array(
   'connected_type' => 'pages_to_features',
@@ -8,11 +8,14 @@ $connected = new WP_Query( array(
 ) );
 
 // Display connected pages
+
 if ( $connected->have_posts() ) :?>
+	
 	<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+		<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
 		<?php $icon_set .= '<li class="sliderThumb"> 
 								<a href="javascript:void(0)" title="'.get_the_title().'">
-									<div class="tab-ico"> <i class="icon-key"></i> </div>
+									<div class="tab-ico"> <i class="icon-'.$iconname.'"></i> </div>
 									<div class="tab-title">
 										<div class="display-table">
 											<div class="display-table-cell"> '.get_the_title().' </div>
