@@ -72,7 +72,26 @@ function child_sections($sections){
                 'desc'=> __('Select main menu book now from media gallery', 'ppm'),
                 'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
             ),
-
+            array(
+                'id'=>'preloader_image',
+                'type' => 'media', 
+                'url'=> true,
+                'title' => __('Preloader Image', 'ppm'),
+                'compiler' => 'true',
+                //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'desc'=> __('Select main menu book now from media gallery', 'ppm'),
+                'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
+            ),
+            array(
+                'id'=>'footer_image',
+                'type' => 'media', 
+                'url'=> true,
+                'title' => __('Footer Image', 'ppm'),
+                'compiler' => 'true',
+                //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'desc'=> __('Select main menu book now from media gallery', 'ppm'),
+                'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
+            ),
  
         )
     );

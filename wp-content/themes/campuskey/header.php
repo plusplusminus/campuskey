@@ -31,7 +31,12 @@
 	<body <?php body_class(); ?>>
 		<div class="wrapper">
 			<div id="preloader">
-			  <div id="status"><img src="images/loader.png" alt="Loading...." title="Loading" width="50px"></div>
+			 	<div id="status">
+			 		<?php $preloader_image = $tpb_options['preloader_image']['url']; ?>
+
+          			<img src="<?php echo $preloader_image;?>" title="Loading" width="50px"/>
+
+			  	</div>
 			</div>
 			<header>
 				<div id="header">
