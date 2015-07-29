@@ -20,11 +20,22 @@
 	         	<div class="slider-text-main">
 		     	 	<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
-							<div class="slider-title">
-				              <h1>Premier provider of secure student living</h1>
+							<div class="row">
+								<div class="slider-title">
+				              		<h1><span>Premier provider of secure student living</span></h1>
+				            	</div>
 				            </div>
 
-				            <?php the_excerpt(); ?>
+				            <div class="row">
+				            	<div class="slider-excerpt">
+				            		<?php $excerpt = get_post_meta($post->ID,'_ck_page_header',true); ?>
+									<?php echo wpautop($excerpt); ?>
+				            	</div>
+				            </div>
+
+				            <div class="row">
+				            	<div class="slider-subtitle">Find out more!</div>
+				            </div>
 							
 						<?php endwhile; ?>
 					<?php endif; ?>

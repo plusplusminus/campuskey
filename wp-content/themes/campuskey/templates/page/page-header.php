@@ -1,4 +1,14 @@
 <?php global $post; ?>
-<header class="header_post">  
-	<h1 class="post_heading--title"><a href="<?php the_permalink();?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-</header>
+<section class="header-page">
+
+		<div class="header-title-area">
+	  		<div class="header-title-area-main">
+				<div class="header-title css-yellow"> <span><?php the_title();?></span> </div>
+	  		</div>
+		</div>
+		<div class="header-subtitle">
+			<?php $subtitle = get_post_meta($post->ID,'_ck_room_header',true); ?>
+			<?php echo wpautop($subtitle); ?>
+		</div>
+
+</section>
