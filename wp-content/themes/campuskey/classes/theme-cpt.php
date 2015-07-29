@@ -138,8 +138,7 @@ class ckCustomPostTypes {
 				'rewrite' 			=> array(	"slug" => "feature"	), // Permalinks
 				'query_var' 		=> "feature", // This goes to the WP_Query schema
 				'supports' 			=> array(	'title',																
-												'editor',
-												'thumbnail'
+												'editor'
 												),
 				'show_in_nav_menus'	=> false ,
 				'taxonomies'		=> array()
@@ -342,6 +341,24 @@ class ckCustomPostTypes {
 		    'options' => array(
 		        'url' => false,
 		    ),
+		) );
+
+	    $features_meta = new_cmb2_box( array(
+	        'id'            => $prefix . 'features_metabox',
+	        'title'         => __( 'Features Settings', 'cmb2' ),
+	        'object_types'  => array( 'features', ), // Post type
+	        'context'       => 'normal',
+	        'priority'      => 'high',
+	        'show_names'    => true, // Show field names on the left
+	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+	        // 'closed'     => true, // true to keep the metabox closed by default
+	    ) );
+
+	    $features_meta->add_field( array(
+		    'name'    => 'Feature Icon',
+		    'desc'    => 'enter the name of the icon',
+		    'id'      => $prefix.'feature_icon',
+		    'type'    => 'text'
 		) );
 
 		p2p_register_connection_type( array(
