@@ -163,11 +163,23 @@ body {
 	}
 }
 
+.explore svg{
+	height: 85px;
+	margin: auto;
+}
 .choose-campus {
 	float: none;
 	position: relative;
 	overflow: hidden;
 	padding: 90px 0px;
+	.header-subtitle {
+		.make-md-column(8);
+		.make-md-column-offset(2);
+		padding: 45px;
+		text-align: center;
+		font-size: 2em;
+		font-weight: 100;
+	}
 	.campus_title {
 		
 		.ribbon(@brand-blue);
@@ -240,6 +252,8 @@ body {
 .section_feature {
 	padding: 45px 0;
 	text-align: center;
+	.make-md-column(10);
+	.make-md-column-offset(1);
 	.header-title {
 		margin-bottom: 45px;
 	}
@@ -306,7 +320,7 @@ body {
 .vertical-ribbon svg {
 	width: 230px;
 	transform: rotate(180deg) translateX(50%);
-	height: 300px;
+	height: 340px;
 	position: absolute;
 	bottom: -300px;
 	left: 50%;
@@ -406,7 +420,7 @@ body {
 		font-size: @font-size-small;
 		font-weight: 200;
 		text-transform: none;
-		padding: 10px;
+		padding: 10px 40px;
 	}
 
 	.vertical-ribbon svg {
@@ -586,13 +600,6 @@ body {
 			color: @brand-blue;
 		}
 	}
-	a{
-		border-bottom: 2px solid @brand-blue;
-		color: @brand-blue;
-		&:hover{
-			border-bottom: none;
-		}
-	}
 }
 
 // Sidebar
@@ -701,10 +708,16 @@ body {
 			margin-top: -9px;
 			margin-bottom: 5px;
 			.collapse-content{
-				padding: 20px;
+				padding: 20px 20px 20px 0;
 				color: @gray-dark;
 				font-size: @font-size-large;
 				background-color: white;
+				a{
+					color: @gray-dark;
+					&:hover{
+						color: lighten(@gray-dark, 25%);
+					}
+				}
 			}
 		}
 	}
@@ -807,20 +820,40 @@ body .gform_wrapper {
 	height: 550px;
 }
 
+.campus_content{
+		p{
+			.body-text(left,@gray-dark);
+		a{
+			border-bottom: 2px solid @brand-blue;
+			color: @brand-blue;
+			&:hover{
+				border-bottom: none;
+			}
+		}
+	}
+}
+
 .campus_gallery {
 	margin-top: 35px;
 }
 
-.bx-wrapper .bx-controls-direction a span{
-	padding: 20px;
-	background-color: @brand-green;
-	opacity: 0.9;
-	border-radius: 100%;
-	font-size: 32px;
-	width: 72px;
-	height: 72px;
-	text-align: center;
-	color: #fff;
+.bx-wrapper .bx-controls-direction{
+	a span{
+		background: @brand-green;
+		padding: 20px;
+		opacity: 0.7;
+		border-radius: 100%;
+		font-size: 32px;
+		width: 72px;
+		height: 72px;
+		text-align: center;
+		color: #fff;
+		.transition(0.2s);
+	}
+	a:hover span{
+		opacity: 1;
+		background-color: darken(@brand-green, 10%)
+	}
 }
 
 .bx-default-pager {

@@ -35,6 +35,9 @@
 
 				            <div class="row">
 				            	<div class="slider-subtitle">Find out more!</div>
+				            	<div class="explore">
+				            		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve"><polygon fill="#fff" points="23.1,34.1 51.5,61.7 80,34.1 81.5,35 51.5,64.1 21.5,35 23.1,34.1"/></svg>
+				            	</div>
 				            </div>
 							
 						<?php endwhile; ?>

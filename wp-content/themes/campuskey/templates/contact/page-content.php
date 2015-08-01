@@ -9,10 +9,12 @@
 					<a href="#collapse<?php echo $count; ?>" class="list-group-item" data-toggle="collapse" data-parent="#accordion"><?php echo $group['title']; ?></a>
 					<div id="collapse<?php echo $count; ?>" class="collapse collapse-content-holder">
 			            <div class="collapse-content">
-			            	<div class="name"><span><?php echo $group['name'];?></span></div>
-			            	<div class="telephone"><span><?php echo $group['telephone'];?></span></div>
-			            	<div class="email"><span><?php echo $group['email'];?></span></div>
-			            	<div class="description"><?php echo wpautop($group['description']);?></div>
+			            	<ul class="fa-ul">
+			            	  <li class="name"><i class="fa-li fa fa-user"></i> <?php echo $group['name'];?></li>
+			            	  <li class="telephone"><i class="fa-li fa fa-phone"></i> <a href="tel:<?php echo $group['telephone'];?>"><?php echo $group['telephone'];?></a></li>
+			            	  <li class="email"><i class="fa-li fa fa-envelope-o"></i> <a target="_blank" href="mailto:<?php echo $group['email'];?>"><?php echo $group['email'];?></a></li>
+			            	  <li class="description"><i class="fa-li fa fa-office"></i> <?php echo wpautop($group['description']);?></li>
+			            	</ul>
 			            </div>
 			        </div>
 				<?php endforeach; ?>
