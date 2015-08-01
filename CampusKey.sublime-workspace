@@ -121,7 +121,6 @@
 	"expanded_folders":
 	[
 		"/Users/iaanvn/Sites/CampusKey",
-		"/Users/iaanvn/Sites/CampusKey/prototype/v1/templates",
 		"/Users/iaanvn/Sites/CampusKey/wp-content",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey",
@@ -134,6 +133,7 @@
 	],
 	"file_history":
 	[
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/theme.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/page.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/single-rooms.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms/archive.php",
@@ -142,7 +142,6 @@
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/sidebar.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/ppm.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/section-header.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/theme.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms/header.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/template-rooms.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms/gallery-content.php",
