@@ -283,6 +283,17 @@ class ckCustomPostTypes {
 			)
 	    );
 
+	     $building_meta->add_field( array(
+			'name'    => 'Map Icon',
+			'desc'    => 'Upload an image or enter an URL.',
+			'id'      => $prefix . 'map_icon',
+			'type'    => 'file',
+			// Optionally hide the text input for the url:
+			'options' => array(
+				'url' => false,
+			),
+		) );
+
 
 		$building_meta->add_field( array(
 		    'name' => 'Building Gallery',
@@ -321,6 +332,13 @@ class ckCustomPostTypes {
 		    'desc'    => 'enter the room header area content',
 		    'id'      => $prefix.'room_header',
 		    'type'    => 'textarea'
+		) );
+
+		$room_meta->add_field( array(
+		    'name'    => 'Room Description',
+		    'desc'    => 'enter the room short description',
+		    'id'      => $prefix.'room_description',
+		    'type'    => 'text'
 		) );
 
 

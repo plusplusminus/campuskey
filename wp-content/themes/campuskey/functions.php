@@ -359,6 +359,55 @@ function get_map() {
     die();
 }
 
+add_action("wp_ajax_get_cmap_options", "get_cmap");
+add_action("wp_ajax_nopriv_cget_map_options", "get_cmap");
+
+function get_cmap() {
+
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        global $post;
+
+        $id = $_POST['id'];
+
+        $location = get_post_meta($id,'_ck_location',true);
+        $image = get_post_meta($id,'_ck_map_icon_id',true);
+        $image_url =  wp_get_attachment_image_src( $image,'full', '' );
+        $base =  array('location'=>$location,'title'=>get_the_title($id),'url'=>get_permalink(),'icon'=>$image_url[0]);
+
+
+        $connected = new WP_Query( array(
+          'connected_type' => 'campuses_to_buildings',
+          'connected_items' => $id,
+          'nopaging' => true,
+        ) );
+
+        // Display connected pages
+        if ( $connected->have_posts() ) :
+        while ( $connected->have_posts() ) : $connected->the_post(); 
+            $location = get_post_meta($post->ID,'_ck_location',true);
+            $image = get_post_meta($post->ID,'_ck_map_icon_id',true);
+            $image_url =  wp_get_attachment_image_src( $image,'full', $icon );
+            $data[] =  array('location'=>$location,'title'=>get_the_title(),'url'=>get_permalink(),'icon'=>$image_url[0]);
+        endwhile; 
+        wp_reset_postdata();
+        endif;
+        
+        $return = array(
+            'message'   => 'Saved',
+            'data' => $data,
+            'base' => $base
+        );
+        
+        wp_send_json($return);
+    
+    }
+    else {
+        header("Location: ".$_SERVER["HTTP_REFERER"]);
+    }
+
+    die();
+}
+
 
 
 ?>

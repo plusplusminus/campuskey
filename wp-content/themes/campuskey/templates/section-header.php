@@ -22,7 +22,7 @@
 						<?php while ( have_posts() ) : the_post(); ?>
 							<div class="row">
 								<div class="slider-title">
-				              		<h1><span>Premier provider of secure student living</span></h1>
+				              		<h1><span><?php the_title();?></span></h1>
 				            	</div>
 				            </div>
 

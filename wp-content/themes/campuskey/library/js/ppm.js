@@ -19,6 +19,7 @@ jQuery(document).ready(function(){
 function initMap() {
 
     map = document.getElementById('map');
+    cmap = document.getElementById('campus-map');
 
 	if (map) {
 
@@ -72,7 +73,76 @@ function initMap() {
 	        }
 	    });
 
-    } else {
+    } else if (cmap) {
+
+               
+        var type = jQuery('#campus-map').data('type');
+        var id = jQuery('#campus-map').data('id');
+
+        jQuery.ajax({
+            type : "post",
+            dataType : "json",
+            url : myAjax.ajaxurl,
+            data: {
+              action: "get_cmap_options",
+              type: type,
+              id: id
+            },
+            error: function(err) {
+              console.log(err);
+            },
+            success: function(data) {
+                var center = new google.maps.LatLng(data.base.location.latitude, data.base.location.longitude); 
+
+                map = new google.maps.Map(cmap, {
+                    zoom: 16,
+                    center: center,
+                    scrollwheel: false,
+                    styles:[{"featureType":"landscape","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"stylers":[{"hue":"#00aaff"},{"saturation":-100},{"gamma":2.15},{"lightness":12}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"lightness":24}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":57}]}]        
+                });
+
+                bounds  = new google.maps.LatLngBounds();
+
+                bounds.extend(center);
+
+                jQuery.each(data.data, function(){
+                    
+                    if (this.location.latitude != "") {
+                        var that = this;
+                        //Plot the location as a marker
+                        var image = {
+                            url: that.icon,
+                            // This marker is 20 pixels wide by 32 pixels tall.
+                            size: new google.maps.Size(120, 35),
+                            // The origin for this image is 0,0.
+                            origin: new google.maps.Point(0,0),
+                            // The anchor for this image is the base of the flagpole at 0,32.
+                            anchor: new google.maps.Point(21, 35)
+                        };
+                        var pos = new google.maps.LatLng(this.location.latitude, this.location.longitude); 
+                        var marker = new google.maps.Marker({
+                            position: pos,
+                            map: map,
+                            title: that.title,
+                            url: that.url,
+                            icon: image
+                        });
+                        google.maps.event.addListener(marker, 'click', function() {
+                            window.location.href = this.url;
+                        });
+
+                        bounds.extend(pos);
+                    }
+                });
+
+                map.fitBounds(bounds);  
+                map.panToBounds(bounds);     
+
+            }
+        });
+
+    }   
+    else {
         console.log("no map");
     }
 }

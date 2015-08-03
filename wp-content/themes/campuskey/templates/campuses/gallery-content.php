@@ -36,6 +36,17 @@ global $tpb_options;
 							<div class="col-md-offset-2 col-md-5">
 								<article class="campus_content">
 									<?php the_content(); ?>
+									<?php $contact = get_post_meta($post->ID,'_ck_campus_contact',true); ?>
+									<?php $address = get_post_meta($post->ID,'_ck_campus_address',true); ?>
+									<?php $telephone = get_post_meta($post->ID,'_ck_campus_telephone',true); ?>
+									<?php $email = get_post_meta($post->ID,'_ck_campus_email',true); ?>
+									<div class="campus_contact">
+										<?php if ($contact) echo '<h3>Campus Contact: <span class="name">'.$contact.'</span></h3>'; ?>
+										<ul class="contact_details">
+											<?php if ($email) echo '<li><span>'.$email.'<span></li>'; ?>
+											<?php if ($telephone) echo '<li><span>'.$telephone.'<span></li>'; ?>
+											<?php if ($address) echo '<li><span>'.$address.'<span></li>'; ?>
+										</ul>
 								</article>
 							</div>
 							<div class="col-md-4">

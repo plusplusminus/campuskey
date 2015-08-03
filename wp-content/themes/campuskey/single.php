@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 	
-	<div class="container-fluid wrap">
+	<div class="container page-container">
+
+		<div class="inner">
       
-	   	<?php get_template_part('templates/post/post','header'); ?>
+	   		<?php get_template_part('templates/page/page','header'); ?>
 
-	  	<?php get_template_part('templates/post/post','content'); ?>
+	  		<?php get_template_part('templates/page/page','content'); ?>
 
-
+	  	</div>
 	</div>
-
-	<?php get_template_part('templates/section','newsletter'); ?>
 
 <?php get_footer(); ?>

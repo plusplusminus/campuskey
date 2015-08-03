@@ -4,8 +4,8 @@
 </div>
 <div class="room-title">
 	<div class="room-text">
-			<h2><span><?php the_title();?></span><span class="description">Room description</span></h2>
-
+			<?php $description = get_post_meta($post->ID,'_ck_room_header',true); ?>
+			<h2><span><?php the_title();?></span><span class="description"><?php echo $description; ?></span></h2>
 			<div class="view-more"> View More <i class="icon-right-arrow"></i> </div>
 	</div>
 	<div class="vertical-ribbon">

@@ -7,7 +7,7 @@
 	  		</div>
 		</div>
 		<div class="header-subtitle">
-			<?php $subtitle = get_post_meta($post->ID,'_ck_room_header',true); ?>
+			<?php $subtitle = get_post_meta($post->ID,'_ck_page_header',true); ?>
 			<?php echo wpautop($subtitle); ?>
 		</div>
 

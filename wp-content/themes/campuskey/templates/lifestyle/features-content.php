@@ -46,16 +46,17 @@ $connected = new WP_Query( array(
 
 			<ul class="feature_list">
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-				<li class="feature_list--item">
-					<div class="tab-ico"> 
-						<i class="icon-key"></i> 
-					</div>
-					<div class="tab-title">
-						<div class="display-table">
-							<div class="display-table-cell"><?php the_title(); ?></div>
+					<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
+					<li class="feature_list--item">
+						<div class="tab-ico"> 
+							<i class="icon-<?php echo $iconname; ?>"></i> 
 						</div>
-					</div>
-				</li>
+						<div class="tab-title">
+							<div class="display-table">
+								<div class="display-table-cell"><?php the_title(); ?></div>
+							</div>
+						</div>
+					</li>
 				<?php endwhile; ?>
 			</ul>
 

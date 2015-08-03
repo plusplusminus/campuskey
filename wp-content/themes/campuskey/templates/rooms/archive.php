@@ -74,9 +74,10 @@
 					
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); $count++; ?>
 						<?php if ($count < 6) : ?>
+							<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
 						    <li class="feature_list--item">
 								<div class="tab-ico"> 
-									<i class="icon-key"></i> 
+									<i class="icon-<?php echo $iconname; ?>"></i> 
 								</div>
 								<div class="tab-title">
 									<div class="display-table">
