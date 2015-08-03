@@ -1,19 +1,30 @@
 <div class="page_container">
 	<aside class="section_sidebar">
 		<?php $groups = get_post_meta($post->ID,'_ck_contact_group',true); ?>
-
 		<?php if (!empty($groups)) : $contact; ?>
 			<div class="list-group list-group-collapse" id="accordion">
 				<?php foreach ($groups as $key => $group) : $count++; ?>
+					<?php $name = $group['name'];?>
+					<?php $telephone = $group['telephone'];?>
+					<?php $email = $group['email'];?>
+					<?php $description = $group['description'];?>
 
 					<a href="#collapse<?php echo $count; ?>" class="list-group-item" data-toggle="collapse" data-parent="#accordion"><?php echo $group['title']; ?></a>
 					<div id="collapse<?php echo $count; ?>" class="collapse collapse-content-holder">
 			            <div class="collapse-content">
 			            	<ul class="fa-ul">
-			            	  <li class="name"><i class="fa-li fa fa-user"></i> <?php echo $group['name'];?></li>
-			            	  <li class="telephone"><i class="fa-li fa fa-phone"></i> <a href="tel:<?php echo $group['telephone'];?>"><?php echo $group['telephone'];?></a></li>
-			            	  <li class="email"><i class="fa-li fa fa-envelope-o"></i> <a target="_blank" href="mailto:<?php echo $group['email'];?>"><?php echo $group['email'];?></a></li>
-			            	  <li class="description"><i class="fa-li fa fa-office"></i> <?php echo wpautop($group['description']);?></li>
+			            		<?php if (!empty($name)) { ?>
+			            	  		<li class="name"><i class="fa-li fa fa-user"></i> <?php echo $name;?></li>
+			            	  	<?php };?>
+			            	  	<?php if (!empty($telephone)) { ?>
+			            	  		<li class="telephone"><i class="fa-li fa fa-phone"></i> <a href="tel:<?php echo $telephone;?>"><?php echo $telephone;?></a></li>
+			            	  	<?php };?>
+			            	  	<?php if (!empty($email)) { ?>
+			            	  		<li class="email"><i class="fa-li fa fa-envelope-o"></i> <a target="_blank" href="mailto:<?php echo $email;?>"><?php echo $email;?></a></li>
+								<?php };?>
+			            	  	<?php if (!empty($description)) { ?>
+			            	  		<li class="description"><i class="fa-li fa fa-map-marker"></i> <?php echo wpautop($description);?></li>
+			            	  	<?php };?>
 			            	</ul>
 			            </div>
 			        </div>
