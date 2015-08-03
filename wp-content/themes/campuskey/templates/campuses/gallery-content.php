@@ -33,7 +33,7 @@ global $tpb_options;
 
 					<?php while ( have_posts() ) : the_post(); $count++; ?>
 						<div class="row">
-							<div class="col-md-offset-2 col-md-5">
+							<div class="col-md-offset-1 col-md-8">
 								<article class="campus_content">
 									<?php the_content(); ?>
 									<?php $contact = get_post_meta($post->ID,'_ck_campus_contact',true); ?>
@@ -49,7 +49,7 @@ global $tpb_options;
 										</ul>
 								</article>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-2">
 								<div class="book-now text-center"> 
 						  			<?php $booknow_image = $tpb_options['booknow_image']['url']; ?>
 						  			<?php $booknow_link = $tpb_options['campuskey_booknow']; ?>

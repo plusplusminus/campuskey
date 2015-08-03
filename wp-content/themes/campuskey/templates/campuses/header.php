@@ -6,7 +6,7 @@
 	  		</div>
 	  		<div class="header-subtitle">
 	  			<?php $header = get_post_meta($post->ID,'_ck_campus_header',true); ?>
-	  			<h2><?php echo $header; ?></h2>
+	  			<p><?php echo $header; ?></p>
 			</div>
 		</div>
 	</div>

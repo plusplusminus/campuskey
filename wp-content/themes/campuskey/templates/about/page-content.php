@@ -1,6 +1,6 @@
 <div class="page_container">
 	<aside class="section_sidebar">
-		<?php dynamic_sidebar('about-1'); ?>
+		<?php get_sidebar(); ?>
 	</aside>
 	<main class="section_article">
 		<article id="post-<?php the_ID(); ?>" <?php post_class('article_post clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting"> 
