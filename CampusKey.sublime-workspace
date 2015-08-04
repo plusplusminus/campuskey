@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"font-f",
+				"font-family-base"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
 				"mar",
 				"margin"
 			],
@@ -24,20 +48,8 @@
 				"body-text"
 			],
 			[
-				"font-",
-				"font-size"
-			],
-			[
 				"bor",
 				"border"
-			],
-			[
-				"font-f",
-				"font-family-base"
-			],
-			[
-				"pad",
-				"padding-bottom"
 			],
 			[
 				"in",
@@ -60,20 +72,12 @@
 				"background"
 			],
 			[
-				"font-s",
-				"font-size-large"
-			],
-			[
 				"font-fa",
 				"font-famliy-script"
 			],
 			[
 				"border-r",
 				"border-radius"
-			],
-			[
-				"font",
-				"font-family"
 			],
 			[
 				"pa",
@@ -86,10 +90,6 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"ma",
-				"margin"
 			],
 			[
 				"mak",
@@ -152,21 +152,24 @@
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/blog",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/contact",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/lifestyle",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/page",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/post",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms"
 	],
 	"file_history":
 	[
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/contact/page-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/ppm.less",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/lifestyle/features-content.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/gallery-content.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/section-header.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/section-feature.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/contact/page-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/theme.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/custom-variables.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/about/page-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/functions.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/header.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/gallery-content.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/section-header.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-config.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/page.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/single-rooms.php",
