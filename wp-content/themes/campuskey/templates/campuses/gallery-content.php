@@ -41,16 +41,17 @@ global $tpb_options;
 									<?php $telephone = get_post_meta($post->ID,'_ck_campus_telephone',true); ?>
 									<?php $email = get_post_meta($post->ID,'_ck_campus_email',true); ?>
 									<div class="campus_contact">
-										<?php if ($contact) echo '<h3>Campus Contact: <span class="name">'.$contact.'</span></h3>'; ?>
-										<ul class="contact_details">
-											<?php if ($email) echo '<li><span>'.$email.'<span></li>'; ?>
-											<?php if ($telephone) echo '<li><span>'.$telephone.'<span></li>'; ?>
-											<?php if ($address) echo '<li><span>'.$address.'<span></li>'; ?>
+										<ul class="contact_details fa-ul">
+											<?php if ($contact) echo '<li> <i class="fa-li fa fa-user"></i><span>'.$contact.'</span></li>'; ?>
+											<?php if ($email) echo '<li> <i class="fa-li fa fa-envelope-o"></i><span>'.$email.'<span></li>'; ?>
+											<?php if ($telephone) echo '<li> <i class="fa-li fa fa-tellephone"></i><span>'.$telephone.'<span></li>'; ?>
+											<?php if ($address) echo '<li> <i class="fa-li fa fa-map-marker"></i><span>'.$address.'<span></li>'; ?>
 										</ul>
+									</div>
 								</article>
 							</div>
 							<div class="col-md-2">
-								<div class="book-now text-center"> 
+								<div class="book-now campus_contact--book text-center"> 
 						  			<?php $booknow_image = $tpb_options['booknow_image']['url']; ?>
 						  			<?php $booknow_link = $tpb_options['campuskey_booknow']; ?>
 						  			<a href="<?php echo $booknow_link;?>" title="Book now!">
