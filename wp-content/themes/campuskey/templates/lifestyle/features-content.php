@@ -50,7 +50,7 @@ $connected = new WP_Query( array(
 
 			<ul class="feature_list">
 					<?php while ( $connected->have_posts() ) : $connected->the_post(); $count++;?>
-						<?php if ($count < 10) : ?>
+						<?php if ($count < 9) : ?>
 							<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
 		
 						    <li class="feature_list--item">
