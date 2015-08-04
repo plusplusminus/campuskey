@@ -240,6 +240,9 @@ body {
 .section_lifestyle {
 	padding: 45px 0;
 	background: @brand-green;
+	.feature_list{
+		max-width: inherit;
+	}
 }
 
 .lifestyle_content{
@@ -467,6 +470,7 @@ body {
 	
 
 	.room_content {
+		color: @gray-dark;
 		.make-md-column(8);
 		.make-md-column-offset(2);
 		padding: 45px 0 0;
@@ -805,6 +809,10 @@ body .gform_wrapper {
 						border-color: @brand-green;
 					}
 				}
+				.gfield_description{
+					font-family: @font-family-base;
+					font-style: italic;
+				}
 			}
 			.gfield_radio,
 			.gfield_checkbox{
@@ -831,7 +839,7 @@ body .gform_wrapper {
 				border: none;
 				margin-bottom: 0px;
 				.gsection_title{
-					color: @brand-red;
+					color: @brand-green;
 					font-family: @font-famliy-script;
 					border-bottom: 2px solid @brand-red;
 					display: inline-block;
