@@ -64,8 +64,8 @@
 										<?php if ($tpb_options['facebook_url']) : ?>
 										<a title="Facebook" target="_blank" href="<?php echo $tpb_options['facebook_url'];?>"><i class="fa fa-facebook"></i></a> </li>
 										<?php endif; ?>
-										<?php if ($tpb_options['youtube_url']) : ?>
-										<a title="Instagram" target="_blank" href="<?php echo $tpb_options['youtube_url'];?>"><i class="fa fa-youtube"></i></a> </li>
+										<?php if ($tpb_options['instagram_url']) : ?>
+										<a title="Instagram" target="_blank" href="<?php echo $tpb_options['instagram_url'];?>"><i class="fa fa-instagram"></i></a> </li>
 										<?php endif; ?>
 								
 									</div>

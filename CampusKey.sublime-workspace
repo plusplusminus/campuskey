@@ -4,8 +4,24 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
 				"font-s",
-				"font-style"
+				"font-size"
 			],
 			[
 				"font-",
@@ -16,16 +32,8 @@
 				"font-size"
 			],
 			[
-				"pad",
-				"padding-top"
-			],
-			[
 				"font-f",
 				"font-family-base"
-			],
-			[
-				"ma",
-				"margin-bottom"
 			],
 			[
 				"mar",
@@ -46,14 +54,6 @@
 			[
 				"body",
 				"body-text"
-			],
-			[
-				"bor",
-				"border"
-			],
-			[
-				"in",
-				"inline"
 			],
 			[
 				"border",
@@ -236,6 +236,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"descrip",
 			"slider-text",
 			"find out more",
 			".vertical-ribbon",

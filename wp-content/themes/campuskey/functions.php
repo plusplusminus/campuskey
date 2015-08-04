@@ -158,10 +158,10 @@ function child_sections($sections){
                 'desc' => __('Enter your Facebook URL', 'campuskey'),
             ),  
             array(
-                'id'=>'youtube_url',
+                'id'=>'instagram_url',
                 'type' => 'text',
-                'title' => __('YouTube', 'campuskey'),
-                'desc' => __('Enter your YouTube URL', 'campuskey'),
+                'title' => __('Instagram', 'campuskey'),
+                'desc' => __('Enter your INstagram URL', 'campuskey'),
             ),  
         )
     );
