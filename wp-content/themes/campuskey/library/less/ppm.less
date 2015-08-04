@@ -5,7 +5,7 @@
 	border-radius: 50px;
 	color: white;
 	font-size: @font-size-large;
-	font-family: @font-famliy-script !important;
+	font-family: @font-family-script !important;
 	display: inline-block;
 	.transition(0.2s);
 	&:hover{
@@ -69,7 +69,7 @@
 	background:transparent;
 	color: #fff;
 	font-size: 40px;
-	font-family: @font-famliy-script;
+	font-family: @font-family-script;
 	line-height: normal;
 	display: inline-block;
 	position: relative;
@@ -391,7 +391,7 @@ body {
 
 .room-grid-main .room-title { position: absolute; left: 0; bottom: 0px; width: 100%; text-align: center; }
 
-.room-grid-main .room-title .view-more { display: none; font-family: @font-famliy-script; border-bottom: 2px solid #fff; font-size: 23px; color: #fff; line-height: 33px; display: inline-block; padding-top: 3px; margin-bottom: 15px; display: none; }
+.room-grid-main .room-title .view-more { display: none; font-family: @font-family-script; border-bottom: 2px solid #fff; font-size: 23px; color: #fff; line-height: 33px; display: inline-block; padding-top: 3px; margin-bottom: 15px; display: none; }
 .room-grid-main .room-title .view-more i { position: relative; top: 3px; font-size: 20px; left: 3px; }
 .room-img { float: left; width: 100%; position: relative; }
 .room-img .slider-shadow { height: 100px; }
@@ -583,7 +583,7 @@ body {
 		}
 	}
 	.slider-subtitle{
-		font-family: @font-famliy-script;
+		font-family: @font-family-script;
 		font-size: 2em;
 		margin-top: 20px;
 		color: white;
@@ -627,6 +627,7 @@ body {
 	border: 3px solid @brand-green;
     border-radius: 2px;
     padding: 20px;
+    margin-bottom: 60px;
     &:hover{
     	box-shadow: 5px 5px 2px #ccc;
     }
@@ -665,7 +666,7 @@ body {
 		list-style: outside;
 		margin-left: 25px;
 		li{
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 			font-size: @font-size-large;
 			list-style-type: disc;
 			color: @brand-blue;
@@ -676,7 +677,7 @@ body {
 		padding-left: 25px;
 		margin-bottom: 20px;
 		p{
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 			font-size: @font-size-larger;
 			padding-bottom: 0px;
 			color: @brand-blue;
@@ -692,7 +693,7 @@ body {
 		background-color: @brand-green;
 		padding: 10px 20px;
 		.section_widget--title{
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 			font-size: 1.6em;
 			color: white;
 		}
@@ -725,7 +726,7 @@ body {
 	.list-group-item:focus{
 		border: none;
 		padding: 10px 20px;
-		font-family: @font-famliy-script;
+		font-family: @font-family-script;
 		font-size: 1.6em;
 		background-color: @gray-light;
 		color: white;
@@ -818,7 +819,7 @@ body {
 // Twitter Widget
 .widget_latest_tweets_widget{
 	.section_widget--title{
-		font-family: @font-famliy-script;
+		font-family: @font-family-script;
 		color: white;
 		font-size: 1.4em;
 		margin-bottom: 20px;
@@ -848,10 +849,35 @@ body .gform_wrapper {
 	border: 3px solid @brand-blue;
 	background: white;
 	margin-bottom: 40px;
+	.validation_error{
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		border-color: red;
+		color: red;
+	}
+	.gf_page_steps{
+		padding: 20px 20px 0 20px;
+		border: none;
+		.gf_step {
+			font-family: @font-family-heading;
+			font-size: 1.2em;
+			text-transform: uppercase;
+
+			.gf_step_number{
+				display: none;
+			}
+		}
+		.gf_step_active {
+			color:@brand-blue;
+			border-bottom: 2px solid @brand-blue;
+		}
+	}
+
 	.gform_heading{
 		width: 100%;
 		.gform_title{
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 			color: white;
 			background: @brand-blue;
 			padding: 10px 20px;
@@ -874,7 +900,7 @@ body .gform_wrapper {
 				.gfield_label{
 					text-transform: uppercase;
 					color: @gray-dark;
-					font-family: @font-famliy-heading;
+					font-family: @font-family-heading;
 					.gfield_required{
 						color: @gray-dark;
 					}
@@ -894,6 +920,16 @@ body .gform_wrapper {
 					font-family: @font-family-base;
 					font-style: italic;
 					color: @gray-dark;
+					&.validation_message{
+						color: red
+					}
+				}
+				.ginput_complex{
+					label{
+						font-family: @font-family-base;
+						color: @gray-dark;
+						font-weight: 200;
+					}
 				}
 			}
 			.gfield_radio,
@@ -926,12 +962,36 @@ body .gform_wrapper {
 				margin-bottom: 0px;
 				.gsection_title{
 					color: @brand-green;
-					font-family: @font-famliy-script;
+					font-family: @font-family-script;
 					border-bottom: 2px solid @brand-green;
 					display: inline-block;
 					padding-bottom: 10px !important;
 				}
 			}
+		}
+	}
+	.gform_page_footer{
+		border: none;
+		height: 80px;
+		.gform_next_button,
+		.gform_previous_button, {
+			font-family: @font-family-script !important;
+			color: @brand-blue;
+			font-size: 1.8em;
+			background: none;
+			&:hover{
+				border-bottom: 2px solid @brand-blue;
+			}
+		}
+		.gform_next_button{
+			.pull-right();
+		}
+		.gform_previous_button{
+			.pull-left();
+		}
+		.gform_button{
+			.btn-cta();
+			.pull-right();
 		}
 	}
 	.gform_footer{
@@ -941,15 +1001,18 @@ body .gform_wrapper {
 		}
 	}
 }
-				#field_1_39&{
-					padding-top: 20px;
-					margin-top: 60px;
-					border-top: 8px double @brand-green;
-					.ginput_container{
-						display: inline-block;
-						padding-left: 20px;
-					}
-				}
+
+#field_1_39&{
+	padding-top: 20px;
+	margin-top: 60px;
+	border-top: 8px double @brand-green;
+	.ginput_container{
+		display: inline-block;
+		padding-left: 20px;
+	}
+}
+
+
 .slide {
 	background-position: center center; 
 	background-size: cover; 
@@ -1155,7 +1218,7 @@ body .gform_wrapper {
 					padding-right: 7px;
 				}
 				a{
-					font-family: @font-famliy-script;
+					font-family: @font-family-script;
 					color: white;
 					&:hover{
 						border-bottom: 2px solid white;
@@ -1164,7 +1227,7 @@ body .gform_wrapper {
 			}
 		}
 		.blog_date{
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 		}
 		.content_inner--title{
 			text-transform: uppercase;
@@ -1185,7 +1248,7 @@ body .gform_wrapper {
 		}
 		.blog_article--link{
 			color: white;
-			font-family: @font-famliy-script;
+			font-family: @font-family-script;
 			font-size: @font-size-large;
 			&:hover{
 				border-bottom: 2px solid white;

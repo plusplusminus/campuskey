@@ -8,7 +8,7 @@
 						<div class="post_entry clearfix">
 							<?php $groups = get_post_meta($post->ID,'_ck_documents_group',true); ?>
 							<?php if (!empty($groups)) : $documents; ?>
-								<div class="list-group list-group-collapse" id="accordion">
+								<div class="documents">
 									<?php foreach ($groups as $key => $group) : $count++; ?>
 										<?php $name = $group['name'];?>
 										<?php $file = $group['file'];?>
@@ -29,12 +29,15 @@
 																<span class="document--description">
 																	<?php echo wpautop($description);?>
 																</span>	
-																<a href="<?php echo $file;?>" class="document-<?php echo $count; ?> document--link">Download Now</a>
+																<a href="<?php echo $file;?>" class="document-<?php echo $count; ?> document--link">View Now</a>
 															</div>
 														</div>
 													</div>
 												</div>
-											<?php };?>
+												<?php if ($count % 3 == 0) { ?>
+													<div class="clearfix"></div>
+												<?php } ;?>
+											<?php } ;?>
 											
 									<?php endforeach; ?>
 								</div>
