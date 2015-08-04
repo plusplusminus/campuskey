@@ -163,10 +163,13 @@ body {
 	}
 }
 
-.explore svg{
-	height: 85px;
-	margin: auto;
+.explore{
+	svg{
+		height: 85px;
+		margin: auto;
+	}
 }
+
 .choose-campus {
 	float: none;
 	position: relative;
@@ -727,6 +730,33 @@ body {
 	}
 }
 
+// Twitter Widget
+.widget_latest_tweets_widget{
+	.section_widget--title{
+		font-family: @font-famliy-script;
+		color: white;
+		font-size: 1.4em;
+		margin-bottom: 20px;
+	}
+	.latest-tweets{
+		p.tweet-text,
+		p.tweet-details{
+		    color: #fff;
+		    font-size: 15px;
+		    line-height: normal;
+		    font-family: @font-family-base;
+		    padding-top: 12px;
+		    line-height: 23px;
+			& a{
+			  color: white;
+			  border-bottom: 1px solid #fff;
+			  &:hover{
+			  	border: 1px solid @brand-blue;
+			  }
+			}
+		}
+	}
+}
 
 // GRavity
 body .gform_wrapper {

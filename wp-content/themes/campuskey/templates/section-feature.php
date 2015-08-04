@@ -25,7 +25,7 @@ if ( $connected->have_posts() ) :?>
 							</li>'; ?>
 		<?php $content_set .= 	'<div class="sliderContent">
 									'.wpautop(get_the_content()).'
-									<div class="slider-btn"> <a href="#" title="Discover the lifestyle">Discover the lifestyle<i class="icon-right-arrow"></i></a> </div>
+									<div class="slider-btn"> <a href="http://campuskey.co.za/newsite/lifestyle/" title="Discover the lifestyle">Discover the lifestyle<i class="icon-right-arrow"></i></a> </div>
 								</div>'; ?>
 	<?php endwhile; ?>
 <?php 
