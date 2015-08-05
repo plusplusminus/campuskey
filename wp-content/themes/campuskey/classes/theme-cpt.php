@@ -543,7 +543,7 @@ class ckCustomPostTypes {
 		$faq_meta->add_group_field( $group_field_id, array(
 		    'name' => 'Answer',
 		    'id'   => 'a',
-		    'type' => 'textarea',
+		    'type' => 'wysiwyg',
 		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
 		) );
 	  
