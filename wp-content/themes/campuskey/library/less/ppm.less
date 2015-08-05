@@ -793,6 +793,32 @@ body {
 			border: 3px solid @brand-yellow;
 			.faq-list-group&{
 				border-color: @brand-blue;
+				a{
+					border-bottom: 2px solid @brand-blue;
+					&:hover{
+						border-color: transparent;
+					}
+				}
+				ul,ol{
+					margin-left: 20px;
+					margin-top: 10px;
+					li{
+						margin-bottom: 10px;
+					}
+				}
+				ol{
+					li{
+						list-style-type: decimal;
+    					list-style-position: outside;
+					}
+				}
+				ul{
+					li{
+						list-style-type: disc;
+    					list-style-position: outside;
+    				}
+				}
+
 			}
 			margin-top: -9px;
 			margin-bottom: 5px;
