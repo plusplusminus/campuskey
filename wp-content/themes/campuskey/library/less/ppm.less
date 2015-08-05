@@ -973,6 +973,7 @@ body .gform_wrapper {
 	.gform_page_footer{
 		border: none;
 		height: 80px;
+		text-align: center;
 		.gform_next_button,
 		.gform_previous_button, {
 			font-family: @font-family-script !important;
@@ -993,6 +994,18 @@ body .gform_wrapper {
 			.btn-cta();
 			.pull-right();
 		}
+		.gform_save_link{
+			margin: auto;
+			display: inline-block;
+			text-align: center;
+			font-family: @font-family-script !important;
+			color: @brand-green;
+			font-size: 1.8em;
+			background: none;
+			&:hover{
+				border-bottom: 2px solid @brand-green;
+			}
+		}
 	}
 	.gform_footer{
 		padding: 0 20px 40px 20px;
@@ -1012,6 +1025,26 @@ body .gform_wrapper {
 	}
 }
 
+.form_saved_message{
+	.body-text(center,@gray-dark);
+	border: 3px dashed @brand-blue;
+	.form_saved_message_emailform{
+		input[type=text],
+		textarea{
+			border:2px solid @brand-blue;
+			padding: 10px;
+			color: @gray-dark;
+			width: 100%;
+			.transition(0.2s);
+			&:focus{
+				border-color: @brand-green;
+			}
+		}
+		input[type=submit]{
+			.btn-cta();
+		}
+	}
+}
 
 .slide {
 	background-position: center center; 
