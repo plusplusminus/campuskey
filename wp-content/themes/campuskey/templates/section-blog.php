@@ -1,17 +1,3 @@
-
-
-<?php
-// Exclude categories on the homepage.
-
-$query_args = array(
-	'post_type' => 'post', 
-	'posts_per_page' => 6
-);
-
-query_posts( $query_args );
-
-?>
-
 <section id="container">
 	<div class="grid-item w1"></div>
     <div class="grid-item w2">

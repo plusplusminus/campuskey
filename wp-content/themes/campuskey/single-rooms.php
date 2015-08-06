@@ -44,14 +44,18 @@
 					  					<?php if($key) : ?>
 
 					  						<?php $image_attributes_large = wp_get_attachment_image_src( $plan['name_id'],'full' ); ?>
-											<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+											<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
+												<div class="img_caption"><?php echo wpautop($plan['caption']); ?></div>
+											</li>
 					  						
 					  					<?php endif; ?>
 
 					  				<?php else : ?>
 
-					  					<?php $image_attributes_large = wp_get_attachment_image_src( $plan['image_id'],'full' ); ?>
-										<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+					  					<?php $image_attributes_large = wp_get_attachment_image_src( $plan['name_id'],'full' ); ?>
+										<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
+											<div class="img_caption"><?php echo wpautop($plan['caption']); ?></div>
+										</li>
 					  						
 
 					  				<?php endif; ?>
