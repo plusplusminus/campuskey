@@ -1227,6 +1227,7 @@ body .gform_wrapper {
 	    &:nth-child(3n) {
 	    	background: @brand-red;
 	    }
+	    min-height: 450px;
 	}
 
 	.blog_content {
@@ -1303,7 +1304,10 @@ body .gform_wrapper {
 		p{
 			.body-text();
 			font-size: @font-size-base;
-			padding-bottom: 10px;
+			margin-bottom: 10px;
+			display: inline-block;
+			height: 100px;
+			overflow: hidden;
 		}
 		.blog_article--link{
 			color: white;

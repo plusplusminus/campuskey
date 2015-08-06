@@ -3,8 +3,10 @@
 <?php
 // Exclude categories on the homepage.
 
+$campus =  $post->post_name;
 $query_args = array(
-	'post_type' => 'post', 
+	'post_type' => 'post',
+	'tag' => $campus,
 	'posts_per_page' => 3
 );
 
@@ -16,7 +18,7 @@ query_posts( $query_args );
 	<div class="container">
 		<div class="header-title-area">
 	  		<div class="header-title-area-main">
-				<div class="header-title"> <span>News & Updates</span> </div>
+				<div class="header-title"> <span>News &amp; Updates</span> </div>
 	  		</div>
 		</div>
 		<?php if ( have_posts() ) : ?>
