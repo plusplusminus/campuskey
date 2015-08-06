@@ -402,9 +402,12 @@ class ckCustomPostTypes {
 		    'id'      => 'campus_select',
 		    'type'    => 'multicheck',
 		    'options' => array(
-		        'check1' => 'Check One',
-		        'check2' => 'Check Two',
-		        'check3' => 'Check Three',
+		        'stellenbosch' => 'Stellenbosch',
+		        'potchefstroom' => 'Potchefstroom',
+		        'port-elizabeth' => 'Port Elizabeth',
+		        'pretoria' => 'Pretoria',
+		        'bloemfontein' => 'Bloemfontein',
+		        'cape-town' => 'Cape Town',
 		    )
 		) );
 
