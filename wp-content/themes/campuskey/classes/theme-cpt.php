@@ -391,6 +391,14 @@ class ckCustomPostTypes {
 		) );
 
 		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Caption',
+		    'id'   => 'caption',
+		    'type' => 'textarea_small',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+
+		$room_meta->add_group_field( $group_field_id, array(
 		    'name' => 'Entry Image',
 		    'id'   => 'name',
 		    'type' => 'file',

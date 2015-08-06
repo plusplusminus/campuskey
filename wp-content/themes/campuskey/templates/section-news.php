@@ -1,14 +1,30 @@
+<?php global $post; ?>
 
+<?php $tag = get_post_meta($post->ID,'_ck_campus_tag',true); ?>
 
-<?php
-// Exclude categories on the homepage.
+<?php if (!empty($tag)) {
 
-$query_args = array(
-	'post_type' => 'post', 
-	'posts_per_page' => 3
-);
+	$args = array(
+	'posts_per_page' => 3,
+	'post_type' => 'post',
+	'tax_query' => array(
+	    array(
+	    'taxonomy' => 'post_tag',
+	    'field' => 'id',
+	    'terms' => $tag[0]
+	     )
+	  )
+	);
+	
+} else {
 
-query_posts( $query_args );
+	$args = array(
+		'post_type' => 'post', 
+		'posts_per_page' => 3
+	);
+}
+
+$query = new WP_Query( $args );
 
 ?>
 
@@ -19,9 +35,9 @@ query_posts( $query_args );
 				<div class="header-title"> <span>News & Updates</span> </div>
 	  		</div>
 		</div>
-		<?php if ( have_posts() ) : ?>
+		<?php if ( $query->have_posts() ) : ?>
 			<div class="row">
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				  	<article id="post-<?php the_ID(); ?>" <?php post_class('article_blog'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 				    	
 				    	<figure class="blog_image">
