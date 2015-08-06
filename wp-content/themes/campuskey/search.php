@@ -45,6 +45,12 @@
 										</figure>
 									</article>
 								<?php endwhile; ?>
+								<nav class="wp-prev-nex">
+									<ul class="pager clearfix">
+										<li class="pull-left"><?php next_posts_link( __( '&laquo; Previous', 'bonestheme' )) ?></li>
+										<li class="pull-right"><?php previous_posts_link( __( 'Next &raquo;', 'bonestheme' )) ?></li>
+									</ul>
+								</nav>
 							</div>
 						<?php endif; ?>
 						<?php wp_reset_query(); ?>

@@ -1,4 +1,4 @@
-<section class="slider-area">
+<section id="home_header" class="slider-area">
     <div class="slider-container">
 
     	<?php global $post; ?>

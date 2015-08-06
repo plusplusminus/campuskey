@@ -255,6 +255,14 @@ class ckCustomPostTypes {
 		    // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 		) );
 
+		$campus_meta->add_field( array(
+		    'name'     => 'Campus Tag Select',
+		    'desc'     => 'select the news & updates tag to show on the page',
+		    'id'       => $prefix.'campus_tag',
+		    'taxonomy' => 'post_tag', //Enter Taxonomy Slug
+		    'type'     => 'taxonomy_select',
+		) );
+
 		$building_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'building_metabox',
 	        'title'         => __( 'Building Meta', 'cmb2' ),
@@ -361,20 +369,9 @@ class ckCustomPostTypes {
 		    ),
 		) );
 
-		$room_meta = new_cmb2_box( array(
-	        'id'            => $prefix . 'contact_metabox',
-	        'title'         => __( 'Contact Meta', 'cmb2' ),
-	        'object_types'  => array( 'page', ), // Post type
-	        'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-contact.php' ),
-	        'context'       => 'normal',
-	        'priority'      => 'high',
-	        'show_names'    => true, // Show field names on the left
-	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
-	        // 'closed'     => true, // true to keep the metabox closed by default
-	    ) );
 
 	    $group_field_id = $room_meta->add_field( array(
-		    'id'          => $prefix.'contact_group',
+		    'id'          => $prefix.'floor_plan_group',
 		    'type'        => 'group',
 		    'description' => __( 'Generates reusable form entries', 'cmb' ),
 		    'options'     => array(
@@ -391,12 +388,6 @@ class ckCustomPostTypes {
 		    'id'   => 'title',
 		    'type' => 'text',
 		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-		) );
-
-		$room_meta->add_group_field( $group_field_id, array(
-		    'name' => 'Entry Image',
-		    'id'   => 'name',
-		    'type' => 'file',
 		) );
 
 		$room_meta->add_group_field( $group_field_id, array(
