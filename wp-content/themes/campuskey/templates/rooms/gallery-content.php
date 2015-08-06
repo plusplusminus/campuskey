@@ -3,17 +3,17 @@
 global $post;
 
 $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_room_floorplan_id', 1 ), 'large','',array('class'=>'img-responsive') );
-
 ?>
 <main class="section_features"> 
 	<div class="container">
 		<aside class="room_gallery">
 			<?php $gallery = get_post_meta($post->ID,'_ck_room_gallery',true); ?>
+			<?php $caption = get_post($image->post_excerpt);?>
 			<?php if (!empty($gallery)) : ?>
 				<ul class="bxslider">
 					<?php foreach ($gallery as $key => $image) : ?>
 						<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
-						<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+						<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"><p class="img_caption"><?php echo $caption;?> This is the image caption</p></li>
 					<?php endforeach; ?>
 				</ul>
 			<?php else : ?>
