@@ -29,7 +29,7 @@
 																<span class="document--description">
 																	<?php echo wpautop($description);?>
 																</span>	
-																<a href="<?php echo $file;?>" class="document-<?php echo $count; ?> document--link">View Now</a>
+																<a href="<?php echo $file;?>" target="_blank" class="document-<?php echo $count; ?> document--link">View Now</a>
 															</div>
 														</div>
 													</div>
