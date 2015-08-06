@@ -1039,10 +1039,11 @@ body .gform_wrapper {
 			.btn-cta();
 		}
 	}
-	.form_saved_message{
+	.form_saved_message,
+	.form_saved_message_sent{
 		.body-text(center,@gray-dark);
 		border: none;
-		margin: none;
+		margin: 0px;
 		.form_saved_message_emailform{
 			input[type=text],
 			textarea{
@@ -1060,6 +1061,13 @@ body .gform_wrapper {
 			}
 		}
 	}
+}
+
+.form_saved_message_sent{
+	.body-text(center,@gray-dark);
+	border: 2px solid @brand-blue;
+	margin: 0px;
+	background: #E3F3F3;
 }
 
 #field_1_39&{
