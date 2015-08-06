@@ -1,22 +1,13 @@
-<section id="home_header" class="slider-area">
-    <div class="slider-container">
+<?php global $post; ?>
 
-    	<?php global $post; ?>
+<?php $media = get_post_thumbnail_id(); ?>
+<?php $image_attributes_large = wp_get_attachment_image_src( $media,'full' ); ?>
 
-		<?php $media = get_post_meta($post->ID,'_ck_home_gallery',true); ?>
-		<?php if (!empty($media)) : ?>
-			<div class="header">
-				<?php foreach ($media as $key => $image) : ?>
-					<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
-					<div class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></div>
-				<?php endforeach; ?>
-			</div>
-		<?php endif; ?>
-      
-      	<div class="slider-shadow"></div>
-
-      	<div class="main">
-        	<div class="slider-text">
+<section id="home_header" class="slider-area" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
+    
+	<div class="slider-container">
+	  	<div class="container">
+	    	<div class="slider-text">
 	         	<div class="slider-text-main">
 		     	 	<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -46,5 +37,6 @@
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
+	<div class="slider-shadow"></div>
 </section>

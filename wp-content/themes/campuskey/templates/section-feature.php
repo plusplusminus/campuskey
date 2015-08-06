@@ -44,10 +44,7 @@ endif;
 		</div>
 		<div class="owl-carousel">
 			<?php echo $content_set; ?>
-			<div class="slider-nav">
-			  	<div class="owl-prev" style=""></div>
-			  	<div class="owl-next" style=""></div>
-			</div>
+			
 		</div>
 	</div>
 </section>
