@@ -361,6 +361,63 @@ class ckCustomPostTypes {
 		    ),
 		) );
 
+		$room_meta = new_cmb2_box( array(
+	        'id'            => $prefix . 'contact_metabox',
+	        'title'         => __( 'Contact Meta', 'cmb2' ),
+	        'object_types'  => array( 'page', ), // Post type
+	        'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-contact.php' ),
+	        'context'       => 'normal',
+	        'priority'      => 'high',
+	        'show_names'    => true, // Show field names on the left
+	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+	        // 'closed'     => true, // true to keep the metabox closed by default
+	    ) );
+
+	    $group_field_id = $room_meta->add_field( array(
+		    'id'          => $prefix.'contact_group',
+		    'type'        => 'group',
+		    'description' => __( 'Generates reusable form entries', 'cmb' ),
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb' ),
+		        'sortable'      => true, // beta
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Title',
+		    'id'   => 'title',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Image',
+		    'id'   => 'name',
+		    'type' => 'file',
+		) );
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Image',
+		    'id'   => 'name',
+		    'type' => 'file',
+		) );
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name'    => 'Select Campus',
+		    'desc'    => 'select the campuses the room is available on',
+		    'id'      => 'campus_select',
+		    'type'    => 'multicheck',
+		    'options' => array(
+		        'check1' => 'Check One',
+		        'check2' => 'Check Two',
+		        'check3' => 'Check Three',
+		    )
+		) );
+
+
 	    $features_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'features_metabox',
 	        'title'         => __( 'Features Settings', 'cmb2' ),
