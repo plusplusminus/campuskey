@@ -38,7 +38,7 @@
 
 			  	</div>
 			</div>
-			<header>
+			<header id="main-header">
 				<div id="header">
 				  	<div class="main">
 						<div class="header-main">

@@ -13,7 +13,48 @@ jQuery(window).load(function() {
 
 jQuery(document).ready(function(){
 	initMap();
+    initHeader();
+    addListeners();
 })
+
+function initHeader() {
+    var height = window.innerHeight;
+    
+    largeHeader = document.getElementById('home_header');
+
+
+    if (largeHeader) {
+        var nav = document.getElementById('main-header').clientHeight;
+        
+        
+
+        largeHeader.style.height = (height-nav)+'px';
+
+    } 
+}
+
+function addListeners() {
+
+
+    window.addEventListener('resize', resize);
+}
+
+function resize() {
+    console.log('das');
+    var height = window.innerHeight;
+    
+    largeHeader = document.getElementById('home_header');
+
+
+    if (largeHeader) {
+        var nav = document.getElementById('main-header').clientHeight;
+        
+        
+
+        largeHeader.style.height = (height-nav)+'px';
+
+    } 
+}
 
 
 function initMap() {

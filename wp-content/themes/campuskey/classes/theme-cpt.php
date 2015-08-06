@@ -255,6 +255,14 @@ class ckCustomPostTypes {
 		    // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 		) );
 
+		$campus_meta->add_field( array(
+		    'name'     => 'Campus Tag Select',
+		    'desc'     => 'select the news & updates tag to show on the page',
+		    'id'       => $prefix.'campus_tag',
+		    'taxonomy' => 'post_tag', //Enter Taxonomy Slug
+		    'type'     => 'taxonomy_select',
+		) );
+
 		$building_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'building_metabox',
 	        'title'         => __( 'Building Meta', 'cmb2' ),
@@ -360,6 +368,57 @@ class ckCustomPostTypes {
 		        'url' => false,
 		    ),
 		) );
+
+
+	    $group_field_id = $room_meta->add_field( array(
+		    'id'          => $prefix.'floor_plan_group',
+		    'type'        => 'group',
+		    'description' => __( 'Generates reusable form entries', 'cmb' ),
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb' ),
+		        'sortable'      => true, // beta
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Title',
+		    'id'   => 'title',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Caption',
+		    'id'   => 'caption',
+		    'type' => 'textarea_small',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Image',
+		    'id'   => 'name',
+		    'type' => 'file',
+		) );
+
+		$room_meta->add_group_field( $group_field_id, array(
+		    'name'    => 'Select Campus',
+		    'desc'    => 'select the campuses the room is available on',
+		    'id'      => 'campus_select',
+		    'type'    => 'multicheck',
+		    'options' => array(
+		        'stellenbosch' => 'Stellenbosch',
+		        'potchefstroom' => 'Potchefstroom',
+		        'port-elizabeth' => 'Port Elizabeth',
+		        'pretoria' => 'Pretoria',
+		        'bloemfontein' => 'Bloemfontein',
+		        'cape-town' => 'Cape Town',
+		    )
+		) );
+
 
 	    $features_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'features_metabox',

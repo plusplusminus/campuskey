@@ -25,11 +25,41 @@
 
 					<div class="header-title-area">
 				  		<div class="header-title-area-main">
-							<div class="header-title css-red"> <span>Floor Plan</span> </div>
+				  		<?php if (!isset($_GET['campus'])) : ?>
+							<div class="header-title css-red"> <span>Floor Plans</span> </div>
+						<?php else : ?>
+							
+							<div class="header-title css-red"> <span><?php echo get_the_title($_GET['campus_id']);?> Floor Plans</span> </div>
+						<?php endif; ?>
 				  		</div>
 				  		<div class="header-content-area">
-				  			<?php echo $image; ?>
-						</div>
+				  			<ul class="bxslider">
+					  			<?php $floorplans = get_post_meta($post->ID,'_ck_floor_plan_group',true); ?>
+					  			<?php foreach ($floorplans as $key => $plan) : $key = false; ?>
+
+					  				<?php if (isset($_GET['campus'])) : ?>
+
+					  					<?php $key = in_array($_GET['campus'], $plan['campus_select']); ?>
+
+					  					<?php if($key) : ?>
+
+					  						<?php $image_attributes_large = wp_get_attachment_image_src( $plan['name_id'],'full' ); ?>
+											<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+					  						
+					  					<?php endif; ?>
+
+					  				<?php else : ?>
+
+					  					<?php $image_attributes_large = wp_get_attachment_image_src( $plan['image_id'],'full' ); ?>
+										<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+					  						
+
+					  				<?php endif; ?>
+					  	
+					  			<?php endforeach; ?>
+					  		</ul>
+				  		</div>
+	
 					</div>
 				</div>
 			</aside>
