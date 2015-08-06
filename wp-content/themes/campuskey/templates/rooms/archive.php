@@ -1,3 +1,62 @@
+<div class="rooms_archive">
+	<div class="page-room">
+		<div class="inner">
+			<?php
+
+				// Find connected pages
+				$connected = new WP_Query( array(
+				  'connected_type' => 'pages_to_features',
+				  'connected_items' => get_queried_object(),
+				  'nopaging' => true,
+				) );
+
+				// Display connected pages
+				if ( $connected->have_posts() ) : $count = 0;
+				?>
+				<aside class="section_feature">				
+					<div class="header-title-area-main">
+						<div class="header-title css-orange"> <span>Room Features</span> </div>
+			  		</div>
+					<ul class="feature_list">
+						
+						<?php while ( $connected->have_posts() ) : $connected->the_post(); $count++; ?>
+							<?php if ($count < 6) : ?>
+								<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
+							    <li class="feature_list--item">
+									<div class="tab-ico"> 
+										<i class="icon-<?php echo $iconname; ?>"></i> 
+									</div>
+									<div class="tab-title">
+										<div class="display-table">
+											<div class="display-table-cell"><?php the_title(); ?></div>
+										</div>
+									</div>
+								</li>
+							<?php else: ?>
+								 <?php if ($count == 6) : ?>
+								 	<div class="clearfix"></div>
+								 	<br>
+								 	<li class="feature_list--list"><strong>Also includes:</strong></li>
+								 <?php endif; ?>
+								<li class="feature_list--list"><?php the_title(); ?></li>
+							<?php endif; ?>
+						<?php endwhile; ?>
+
+					</ul>
+				</aside>
+
+				<?php 
+				// Prevent weirdness
+				wp_reset_postdata();
+
+				endif;
+
+				?>
+		</div>
+<!-- 	<div class="bg-features"></div> -->
+	</div>
+</div>
+
 <div class="page-room">
 	<div class="inner">
 		<section class="section-rooms">
@@ -51,60 +110,4 @@
 		</section>	
 	</div>
 	<div class="border-room"></div>
-</div>
-<div class="page-room">
-	<div class="inner">
-		<?php
-
-			// Find connected pages
-			$connected = new WP_Query( array(
-			  'connected_type' => 'pages_to_features',
-			  'connected_items' => get_queried_object(),
-			  'nopaging' => true,
-			) );
-
-			// Display connected pages
-			if ( $connected->have_posts() ) : $count = 0;
-			?>
-			<aside class="section_feature">				
-				<div class="header-title-area-main">
-					<div class="header-title css-orange"> <span>Room Features</span> </div>
-		  		</div>
-				<ul class="feature_list">
-					
-					<?php while ( $connected->have_posts() ) : $connected->the_post(); $count++; ?>
-						<?php if ($count < 6) : ?>
-							<?php $iconname = get_post_meta($post->ID,'_ck_feature_icon',true); ?>
-						    <li class="feature_list--item">
-								<div class="tab-ico"> 
-									<i class="icon-<?php echo $iconname; ?>"></i> 
-								</div>
-								<div class="tab-title">
-									<div class="display-table">
-										<div class="display-table-cell"><?php the_title(); ?></div>
-									</div>
-								</div>
-							</li>
-						<?php else: ?>
-							 <?php if ($count == 6) : ?>
-							 	<div class="clearfix"></div>
-							 	<br>
-							 	<li class="feature_list--list"><strong>Also includes:</strong></li>
-							 <?php endif; ?>
-							<li class="feature_list--list"><?php the_title(); ?></li>
-						<?php endif; ?>
-					<?php endwhile; ?>
-
-				</ul>
-			</aside>
-
-			<?php 
-			// Prevent weirdness
-			wp_reset_postdata();
-
-			endif;
-
-			?>
-	</div>
-	<div class="bg-features"></div>
 </div>

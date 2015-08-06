@@ -517,6 +517,92 @@ class ckCustomPostTypes {
 		    'type' => 'textarea_small',
 		) );
 
+	    $documents_meta = new_cmb2_box( array(
+	        'id'            => $prefix . 'documents_metabox',
+	        'title'         => __( 'Documents Meta', 'cmb2' ),
+	        'object_types'  => array( 'page', ), // Post type
+	        'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-docs.php' ),
+	        'context'       => 'normal',
+	        'priority'      => 'high',
+	        'show_names'    => true, // Show field names on the left
+	        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+	        // 'closed'     => true, // true to keep the metabox closed by default
+	    ) );
+
+	    $group_field_id = $documents_meta->add_field( array(
+		    'id'          => $prefix.'documents_group',
+		    'type'        => 'group',
+		    'description' => __( 'Add each document here', 'cmb' ),
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb' ),
+		        'sortable'      => true, // beta
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+
+		$documents_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Document Name',
+		    'id'   => 'name',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$documents_meta->add_group_field( $group_field_id, array(
+		    'name' => 'File Upload',
+		    'id'   => 'file',
+		    'type' => 'file',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$documents_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Description',
+		    'description' => 'Write a short description for this document',
+		    'id'   => 'description',
+		    'type' => 'textarea_small',
+		) );
+
+		$faq_meta = new_cmb2_box( array(
+		    'id'            => $prefix . 'faq_metabox',
+		    'title'         => __( 'FAQ Meta', 'cmb2' ),
+		    'object_types'  => array( 'page', ), // Post type
+		    'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/template-faq.php' ),
+		    'context'       => 'normal',
+		    'priority'      => 'high',
+		    'show_names'    => true, // Show field names on the left
+		    // 'cmb_styles' => false, // false to disable the CMB stylesheet
+		    // 'closed'     => true, // true to keep the metabox closed by default
+		) );
+
+	    $group_field_id = $faq_meta->add_field( array(
+		    'id'          => $prefix.'faq_group',
+		    'type'        => 'group',
+		    'description' => __( 'Add each Q&A here', 'cmb' ),
+		    'options'     => array(
+		        'group_title'   => __( 'Entry {#}', 'cmb' ), // since version 1.1.4, {#} gets replaced by row number
+		        'add_button'    => __( 'Add Another Entry', 'cmb' ),
+		        'remove_button' => __( 'Remove Entry', 'cmb' ),
+		        'sortable'      => true, // beta
+		    ),
+		) );
+
+		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
+
+		$faq_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Question',
+		    'id'   => 'q',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$faq_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Answer',
+		    'id'   => 'a',
+		    'type' => 'wysiwyg',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
 	  
 	}
 
