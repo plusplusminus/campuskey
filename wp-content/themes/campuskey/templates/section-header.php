@@ -3,7 +3,7 @@
 <?php $media = get_post_thumbnail_id(); ?>
 <?php $image_attributes_large = wp_get_attachment_image_src( $media,'full' ); ?>
 
-<section id="home_header" class="slider-area" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
+<section id="home_header" class="slider-area" style="background-size: cover; background-image:url('<?php echo $image_attributes_large[0];?>'); background-position: center center;">
     
 	<div class="slider-container">
 	  	<div class="container">
