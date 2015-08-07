@@ -3,7 +3,7 @@
 	<div class="choose-campus">
       <div class="inner">
    	  <?php get_template_part('templates/buildings/header'); ?>
-   	  <?php get_template_part('templates/campuses/gallery-content'); ?>
+   	  <?php get_template_part('templates/buildings/gallery-content'); ?>
 		</div>
 		<div class="border-campus"></div>
 	</div>

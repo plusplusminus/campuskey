@@ -4,7 +4,7 @@
 </div>
 <div class="room-title">
 	<div class="room-text">
-			<?php $description = get_post_meta($post->ID,'_ck_room_header',true); ?>
+			<?php $description = get_post_meta($post->ID,'_ck_room_description',true); ?>
 			<h2><span><?php the_title();?></span><span class="description"><?php echo $description; ?></span></h2>
 			<div class="view-more"> View More <i class="icon-right-arrow"></i> </div>
 	</div>

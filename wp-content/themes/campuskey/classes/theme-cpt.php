@@ -358,17 +358,6 @@ class ckCustomPostTypes {
 		    // 'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 		) );
 
-		$room_meta->add_field( array(
-		    'name'    => 'Room Floor Plan',
-		    'desc'    => 'Upload the floor plan image',
-		    'id'      => $prefix.'room_floorplan',
-		    'type'    => 'file',
-		    // Optionally hide the text input for the url:
-		    'options' => array(
-		        'url' => false,
-		    ),
-		) );
-
 
 	    $group_field_id = $room_meta->add_field( array(
 		    'id'          => $prefix.'floor_plan_group',
