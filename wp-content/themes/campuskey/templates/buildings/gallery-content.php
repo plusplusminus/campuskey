@@ -1,6 +1,7 @@
 <?php 
 
 global $post;
+global $tpb_options;
 
 $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_building_floorplan_id', 1 ), 'large','',array('class'=>'img-responsive') );
 ?>
