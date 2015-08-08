@@ -154,11 +154,11 @@ function initMap() {
                         var image = {
                             url: that.icon,
                             // This marker is 20 pixels wide by 32 pixels tall.
-                            size: new google.maps.Size(120, 55),
+                            size: new google.maps.Size(155, 40),
                             // The origin for this image is 0,0.
                             origin: new google.maps.Point(0,0),
                             // The anchor for this image is the base of the flagpole at 0,32.
-                            anchor: new google.maps.Point(21, 35)
+                            anchor: new google.maps.Point(13,40)
                         };
                         var pos = new google.maps.LatLng(this.location.latitude, this.location.longitude); 
                         var marker = new google.maps.Marker({
