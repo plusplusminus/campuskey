@@ -28,7 +28,7 @@ function initHeader() {
         
         
 
-        largeHeader.style.height = (height-nav)+'px';
+        largeHeader.style.height = (height-nav+50)+'px';
 
     } 
 }
@@ -51,7 +51,7 @@ function resize() {
         
         
 
-        largeHeader.style.height = (height-nav)+'px';
+        largeHeader.style.height = (height-nav+50)+'px';
 
     } 
 }
