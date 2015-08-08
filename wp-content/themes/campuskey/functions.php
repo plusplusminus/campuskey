@@ -133,7 +133,7 @@ function child_sections($sections){
                 'title' => __('Preloader Image', 'ppm'),
                 'compiler' => 'true',
                 //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'=> __('Select main menu book now from media gallery', 'ppm'),
+                'desc'=> __('Select the preloader', 'ppm'),
                 'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
             ),
             array(
@@ -143,7 +143,7 @@ function child_sections($sections){
                 'title' => __('Footer Image', 'ppm'),
                 'compiler' => 'true',
                 //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                'desc'=> __('Select main menu book now from media gallery', 'ppm'),
+                'desc'=> __('Select the footer banner', 'ppm'),
                 'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
             ),
  
@@ -161,7 +161,7 @@ function child_sections($sections){
                 'id'=>'twitter_url',
                 'type' => 'text',
                 'title' => __('Twitter', 'campuskey'),
-                'desc' => __('Enter your twitter url', 'campuskey'),
+                'desc' => __('Enter your Twitter url', 'campuskey'),
             ),  
             array(
                 'id'=>'facebook_url',
@@ -173,7 +173,7 @@ function child_sections($sections){
                 'id'=>'instagram_url',
                 'type' => 'text',
                 'title' => __('Instagram', 'campuskey'),
-                'desc' => __('Enter your INstagram URL', 'campuskey'),
+                'desc' => __('Enter your Instagram URL', 'campuskey'),
             ),  
         )
     );
@@ -190,12 +190,6 @@ function child_sections($sections){
                 'title' => __('Phone Number Text', 'campuskey'),
                 'desc' => __('Enter the text based phone number', 'campuskey'),
             ), 
-            array(
-                'id'=>'campuskey_phone',
-                'type' => 'text',
-                'title' => __('Phone Number', 'campuskey'),
-                'desc' => __('Enter the number based phone number', 'campuskey'),
-            ),
             array(
                 'id'=>'campuskey_phone',
                 'type' => 'text',

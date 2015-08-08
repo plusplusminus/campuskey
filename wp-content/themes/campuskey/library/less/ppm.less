@@ -1180,9 +1180,14 @@ body .gform_wrapper {
 
 .slide {
 	background-position: center center; 
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat; 
 	height: 550px;
+	.room-floorplan &,
+	.campus-floorplan &,
+	.building-floorplan &{
+		background-size: contain;
+	}
 	.img_caption {
 		background-color: rgba(255, 255, 255, 0.95);
 	    padding: 10px;
