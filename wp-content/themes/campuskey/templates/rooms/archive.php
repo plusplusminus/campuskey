@@ -63,7 +63,7 @@
 			<div class="container">
 				<div class="header-title-area">
 			  		<div class="header-title-area-main">
-						<div class="header-title"> <span>Choose your room</span> </div>
+						<div class="header-title css-orange"> <span>Choose your room</span> </div>
 			  		</div>
 			  		<div class="header-subtitle">
 			  			<?php

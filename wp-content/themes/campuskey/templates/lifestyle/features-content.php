@@ -34,6 +34,22 @@ $connected = new WP_Query( array(
 
 		<div class="clearfix"></div>
 
+		<aside class="lifestyle_gallery">
+			<?php $gallery = get_post_meta($post->ID,'_ck_home_gallery',true); ?>
+			<?php if (!empty($gallery)) : ?>
+				<ul class="bxslider">
+					<?php foreach ($gallery as $key => $image) : ?>
+						<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
+						<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php else : ?>
+				<figure class="post-header_image">
+					<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+				</figure>
+			<?php endif; ?>
+		</aside>
+
 		<?php
 
 		// Find connected pages

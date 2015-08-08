@@ -18,7 +18,7 @@ query_posts( $query_args );
 		  		<div class="campus-title-area-main">
 					<div class="campus-home-title-1"> Your new home </div>
 					<div class="clear"></div>
-					<div class="campus_title css-orange"> <span>Choose your Campus!</span> </div>
+					<div class="campus_title css-green"> <span>Choose your Campus!</span> </div>
 		  		</div>
 			</div>
 			<div class="campus-grid-area">

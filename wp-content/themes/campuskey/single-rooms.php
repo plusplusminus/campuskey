@@ -29,7 +29,7 @@
 							<div class="header-title css-red"> <span>Floor Plans</span> </div>
 						<?php else : ?>
 							
-							<div class="header-title css-red"> <span><?php echo get_the_title($_GET['campus_id']);?> Floor Plans</span> </div>
+							<div class="header-title css-orange"> <span><?php echo get_the_title($_GET['campus_id']);?> Floor Plans</span> </div>
 						<?php endif; ?>
 				  		</div>
 				  		<div class="header-content-area">

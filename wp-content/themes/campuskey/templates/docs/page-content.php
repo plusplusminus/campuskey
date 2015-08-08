@@ -14,7 +14,7 @@
 										<?php $file = $group['file'];?>
 										<?php $description = $group['description'];?>
 											<?php if (!empty($name)) { ?>
-												<div class="col-md-4">
+												<div class="col-md-4 doc">
 													<div class="document_holder">
 														<div class="row">
 															<div class="col-md-12">

@@ -255,11 +255,14 @@ jQuery(document).ready(function() {
     owlCarousel.owlCarousel({
         items: 1,
         nav: true,
-		smartSpeed: 700,
+		smartSpeed: 200,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
         startPosition: jQuery(".sliderThumb.active", owlCarouselThumb).index(),
         onInitialize: function(event) {}
     });
-    owlCarousel.on('translated.owl.carousel', function(event) {
+    owlCarousel.on('translate.owl.carousel', function(event) {
+        console.log(event);
         var item = event.item.index; // Position of the current item
         jQuery(".sliderThumb", owlCarouselThumb).removeClass("active");
         jQuery(".sliderThumb", owlCarouselThumb).eq(item).addClass("active");
@@ -304,6 +307,15 @@ jQuery(document).ready(function() {
     jQuery(".slider-nav .owl-next").click(function() {
         owlCarousel.trigger('next.owl.carousel');
     });
+    jQuery('.scrollit').on('click',function(event){
+        var jQueryanchor = jQuery(this);
+        
+        jQuery('html, body').stop().animate({
+            scrollTop: jQuery(jQueryanchor.attr('href')).offset().top-125
+        }, 1500);
+        
+        event.preventDefault();
+    });
 });
 
 jQuery(window).load(function() {
@@ -311,7 +323,7 @@ jQuery(window).load(function() {
 
 	jQuery('.bxslider').bxSlider({
         mode: 'fade',
-        auto: true,
+        auto: false,
         autoControls: true,
 		touchEnabled: true,
         pause: 5000,
@@ -377,3 +389,52 @@ function init() {
 
 }
 window.onload = init();
+
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ jQuery(container).each(function() {
+
+   $el = jQuery(this);
+   jQuery($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+jQuery(window).load(function() {
+  equalheight('.documents .doc .document_holder');
+
+  equalheight('.section_news .article_blog');
+
+
+  jQuery('a').removeAttr( "title" );
+  jQuery('img').removeAttr( "alt" );
+
+});
+
+
+jQuery(window).resize(function(){
+  equalheight('.documents .doc .document_holder');
+
+  equalheight('.section_news .article_blog');
+});
