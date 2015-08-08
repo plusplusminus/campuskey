@@ -34,7 +34,7 @@
 			 	<div id="status">
 			 		<?php $preloader_image = $tpb_options['preloader_image']['url']; ?>
 
-          			<img src="<?php echo $preloader_image;?>" title="Loading" width="50px"/>
+          			<img src="<?php echo $preloader_image;?>" title="Loading" width="32px"/>
 
 			  	</div>
 			</div>
