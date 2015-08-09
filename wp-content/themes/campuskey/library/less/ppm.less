@@ -4,7 +4,7 @@
 	padding: 9px 40px 9px 40px;
 	border-radius: 50px;
 	color: white;
-	font-size: @font-size-large;
+	font-size: 2.4em;
 	font-family: @font-family-script !important;
 	display: inline-block;
 	.transition(0.2s);
@@ -68,9 +68,9 @@
 .ribbon(@color:@brand-green) {
 	background:transparent;
 	color: #fff;
-	font-size: 24px;
+	font-size: 29px;
 	font-family: @font-family-script;
-	line-height: normal;
+	line-height: 1.4em;
 	display: inline-block;
 	position: relative;
 	min-height: 36px;
@@ -78,7 +78,7 @@
 
 	@media(min-width:@screen-sm-min) {
 		min-height: 70px;
-		font-size: 40px;
+		font-size: 50px;
 	}
 
 	span {
@@ -180,7 +180,7 @@ body {
 .header-main .logo { 
 	@media(min-width:@screen-md-min) {
 		img {
-			max-width: 260px;
+			max-width: 262px;
 		}
 	}
 }
@@ -600,8 +600,8 @@ body {
 	position: relative;
 	.room-floorplan{
 		.header-content-area{
-			.make-md-column(8);
-			.make-md-column-offset(2);
+			.make-md-column(10);
+			.make-md-column-offset(1);
 			margin: 45px auto;
 			background: white;
 			border: 5px solid @brand-orange;
@@ -628,7 +628,7 @@ body {
 	}
 	.slider-subtitle{
 		font-family: @font-family-script;
-		font-size: 2em;
+		font-size: 3em;
 		margin-top: 20px;
 		color: white;
 	}
@@ -738,7 +738,9 @@ body {
 		background-color: @brand-green;
 		padding: 10px 20px;
 		.section_widget--title{
-			font-family: @font-family-script;
+			font-family: @font-family-heading;
+			text-transform: uppercase;
+			font-weight: normal;
 			font-size: 1.6em;
 			color: white;
 		}
@@ -771,11 +773,15 @@ body {
 	.list-group-item:focus{
 		border: none;
 		padding: 10px 20px;
-		font-family: @font-family-script;
+		font-family: @font-family-heading;
+		text-transform: uppercase;
 		font-size: 1.6em;
 		background-color: @gray-light;
 		color: white;
 		margin-bottom: 5px;
+		.faq-list-group&{
+			text-transform: none;
+		}
 		a {
 			color: white;
 			display: block;
@@ -892,7 +898,7 @@ body {
 	.section_widget--title{
 		font-family: @font-family-script;
 		color: white;
-		font-size: 1.4em;
+		font-size: 30px;
 		margin-bottom: 20px;
 	}
 	.latest-tweets{
@@ -948,7 +954,9 @@ body .gform_wrapper {
 	.gform_heading{
 		width: 100%;
 		.gform_title{
-			font-family: @font-family-script;
+			font-family: @font-family-heading;
+			text-transform: uppercase;
+			font-weight: normal;
 			color: white;
 			background: @brand-blue;
 			padding: 10px 20px;
@@ -969,9 +977,10 @@ body .gform_wrapper {
 			.gfield{
 				margin-bottom: 20px;
 				.gfield_label{
-					text-transform: uppercase;
-					color: @gray-dark;
-					font-family: @font-family-heading;
+					color: @brand-green;
+					font-family: @font-family-script;
+					font-size: 2em;
+					margin-bottom: 0px;
 					.gfield_required{
 						color: @gray-dark;
 					}
@@ -991,6 +1000,7 @@ body .gform_wrapper {
 					font-family: @font-family-base;
 					font-style: italic;
 					color: @gray-dark;
+					padding-top: 0px;
 					&.validation_message{
 						color: red
 					}
@@ -1007,8 +1017,11 @@ body .gform_wrapper {
 			.gfield_checkbox{
 				label{
 					font-family: @font-family-base;
-					font-weight: normal;
+					font-weight: 200;
 					color: @gray-dark;
+					.ginput_price{
+						.opacity(1);
+					}
 				}
 				li input[type="radio"]:checked+label,
 				li input[type="checkbox"]:checked+label{
@@ -1016,8 +1029,15 @@ body .gform_wrapper {
 					color: @brand-blue;
 				}
 			}
-			.gfield_html{
+			.gfield_html,
+			.gfield_html_formatted{
+				width: 100%;
+				margin-left: 0px !important;
+				font-family: @font-family-base;
+				color: @gray-darker;
+				margin-top: 0px;
 				ul,ol{
+					margin-top: 0px !important;
 					li{
 						font-family: @font-family-base;
 						color: @gray-darker;
@@ -1031,10 +1051,12 @@ body .gform_wrapper {
 			.gsection{
 				border: none;
 				margin-bottom: 0px;
+				margin-top: 3em;
+				padding-bottom: 0px;
 				.gsection_title{
 					color: @brand-green;
 					font-family: @font-family-script;
-					border-bottom: 2px solid @brand-green;
+					font-size: 2em;
 					display: inline-block;
 					padding-bottom: 10px !important;
 				}
@@ -1049,7 +1071,7 @@ body .gform_wrapper {
 		.gform_previous_button, {
 			font-family: @font-family-script !important;
 			color: @brand-blue;
-			font-size: 1.8em;
+			font-size: 2.4em;
 			background: none;
 			&:hover{
 				border-bottom: 2px solid @brand-blue;
@@ -1072,7 +1094,7 @@ body .gform_wrapper {
 			text-align: center;
 			font-family: @font-family-script !important;
 			color: @brand-green;
-			font-size: 1.8em;
+			font-size: 2.4em;
 			background: none;
 			clear: both;
 			&:hover{
@@ -1159,6 +1181,12 @@ body .gform_wrapper {
 	}
 }
 
+.gforms_confirmation_message {
+	.gform_confirmation_message{
+		.body-text(left,@brand-green);
+	}
+}
+
 .form_saved_message_sent{
 	.body-text(center,@gray-dark);
 	border: 2px solid @brand-blue;
@@ -1166,10 +1194,14 @@ body .gform_wrapper {
 	background: #E3F3F3;
 }
 
-#field_1_39&{
-	padding-top: 20px;
+#field_1_39&,
+#field_4_39&{
+	padding-top: 10px;
+	padding-bottom: 20px;
 	margin-top: 60px;
 	border-top: 8px double @brand-green;
+	border-bottom: 8px double @brand-green;
+	font-family: @font-family-base;
 	.ginput_container{
 		display: inline-block;
 		padding-left: 20px;
@@ -1217,13 +1249,16 @@ body .gform_wrapper {
 	}
 }
 .campus_contact{
+	font-weight: 400;
 	li{
 		font-size: 1.2em;
 	}
 }
 
 .campus_contact--book.book-now{
-	top: 50px;
+	top: 0px;
+	left: 0px;
+	right: inherit;
 }
 
 .campus_gallery {
@@ -1499,7 +1534,7 @@ body .gform_wrapper {
 /* Widgets */
 .widget_text {
 	.section_widget--title {
-		font-size: 20px;
+		font-size: 30px;
 		font-family: @font-family-script;
 		font-weight: normal;
 		color: #fff;
@@ -1529,7 +1564,7 @@ body .gform_wrapper {
 
 .recent-posts-widget-with-thumbnails {
 	.section_widget--title {
-		font-size: 20px;
+		font-size: 30px;
 		font-family: @font-family-script;
 		font-weight: normal;
 		color: #fff;

@@ -404,6 +404,23 @@ function get_cmap() {
     die();
 }
 
+
+// Gravity Remove .00 from TOTAL
+add_filter( 'gform_currencies', 'update_currency' );
+function update_currency( $currencies ) {
+$currencies['ZAR'] = array(
+'name' => __( 'South African Rand', 'gravityforms' ),
+'symbol_left' => 'R',
+'symbol_right' => '',
+'symbol_padding' => ' ',
+'thousand_separator' => ',',
+'decimal_separator' => '.',
+'decimals' => 0
+);
+ 
+return $currencies;
+}
+
 // Gravity Subtotal Calculation
 /**
 * Calculation Subtotal Merge Tag

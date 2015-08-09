@@ -322,6 +322,34 @@ class ckCustomPostTypes {
 		    ),
 		) );
 
+	    $building_meta->add_field( array(
+		    'name'    => 'Campus Contact Name',
+		    'desc'    => 'enter the building contact person name',
+		    'id'      => $prefix.'building_contact',
+		    'type'    => 'text'
+		) );
+
+		$building_meta->add_field( array(
+		    'name'    => 'Campus Physical Address',
+		    'desc'    => 'enter the building physical address',
+		    'id'      => $prefix.'building_address',
+		    'type'    => 'text'
+		) );
+
+		$building_meta->add_field( array(
+		    'name'    => 'Campus Telephone Number',
+		    'desc'    => 'enter the building telephone number',
+		    'id'      => $prefix.'building_tel',
+		    'type'    => 'text'
+		) );
+
+		$building_meta->add_field( array(
+		    'name'    => 'Campus Email',
+		    'desc'    => 'enter the building email address',
+		    'id'      => $prefix.'building_email',
+		    'type'    => 'text'
+		) );
+
 
 
 		$room_meta = new_cmb2_box( array(
