@@ -146,6 +146,16 @@ function child_sections($sections){
                 'desc'=> __('Select the footer banner', 'ppm'),
                 'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
             ),
+            array(
+                'id'=>'footer_logo',
+                'type' => 'media', 
+                'url'=> true,
+                'title' => __('Footer Logo', 'ppm'),
+                'compiler' => 'true',
+                //'mode' => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                'desc'=> __('Select the footer logo', 'ppm'),
+                'default'=>array('url'=>'http://s.wordpress.org/style/images/codeispoetry.png'),
+            ),
  
         )
     );
