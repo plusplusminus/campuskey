@@ -17,8 +17,9 @@
  global $gf_pdf_default_configuration;
  
  $gf_pdf_default_configuration = array(
- 	'template' => 'default-template.php',
-	'pdf_size' => 'A4'	
+ 	'template' => 'default-two-rows.php',
+	'pdf_size' => 'A4',
+  'notifications' => 'Admin Notification',
  ); 
  
  /*

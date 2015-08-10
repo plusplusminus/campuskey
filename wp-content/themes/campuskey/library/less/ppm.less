@@ -779,9 +779,6 @@ body {
 		background-color: @gray-light;
 		color: white;
 		margin-bottom: 5px;
-		.faq-list-group&{
-			text-transform: none;
-		}
 		a {
 			color: white;
 			display: block;
@@ -828,7 +825,10 @@ body {
 	}
 	&.list-group-collapse{
 		.list-group-item{
-			&:after{
+			span{
+				max-width: 100%;
+			}
+			&:before{
 				font-family: FontAwesome;
 			    content: "+";
 			    display: inline-block;

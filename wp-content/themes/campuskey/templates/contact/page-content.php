@@ -9,7 +9,7 @@
 					<?php $email = $group['email'];?>
 					<?php $description = $group['description'];?>
 
-					<a href="#collapse<?php echo $count; ?>" class="list-group-item" data-toggle="collapse" data-parent="#accordion"><?php echo $group['title']; ?></a>
+					<a href="#collapse<?php echo $count; ?>" class="list-group-item" data-toggle="collapse" data-parent="#accordion"><span><?php echo $group['title']; ?></span></a>
 					<div id="collapse<?php echo $count; ?>" class="collapse collapse-content-holder">
 			            <div class="collapse-content">
 			            	<ul class="fa-ul">
