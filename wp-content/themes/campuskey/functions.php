@@ -4,6 +4,36 @@
 /* Load the theme-specific files, with support for overriding via a child theme.
 /*-----------------------------------------------------------------------------------*/
 
+
+// ID Validation
+add_filter("gform_field_validation_5_55", "rsa_id_validation", 10, 4);
+add_filter("gform_field_validation_5_111", "rsa_id_validation", 10, 4);
+function rsa_id_validation($result, $value, $form, $field){
+    $A = 0;
+    $B = '';
+    $C2 = 0;
+    $D = 0;
+    $Z = 0;
+    $value=preg_replace("/[^0-9]/", "", $value);
+    for($i=0; $i<strlen($value)-1; $i = $i+2) 
+        $A += intval($value[$i]);
+    for($i=1; $i<strlen($value); $i = $i+2) 
+        $B .= $value[$i];
+    $C = strval($B*2);
+    for($i=0; $i<strlen($C); $i = $i+1) 
+        $C2 += $C[$i];
+    $D = $A + $C2;
+    $Z = 10 - ($D % 10);
+    if ($Z == 10) $Z = 0;
+    $len = strlen($value)-1;
+    if($result["is_valid"] && ($Z != intval($value[$len]))){
+        $result["is_valid"] = false;
+        $result["message"] = "Invalid RSA Identity Number";
+    }
+    return $result;
+}
+
+
 // Excerpt changes
 function custom_excerpt_length( $length ) {
     return 20;
