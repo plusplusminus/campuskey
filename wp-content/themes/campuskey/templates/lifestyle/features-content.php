@@ -47,7 +47,9 @@ $connected = new WP_Query( array(
 				</ul>
 			<?php else : ?>
 				<figure class="post-header_image">
-					<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+					<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+						<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+					</a>
 				</figure>
 			<?php endif; ?>
 		</aside>
