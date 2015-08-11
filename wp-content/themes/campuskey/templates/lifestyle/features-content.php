@@ -40,7 +40,9 @@ $connected = new WP_Query( array(
 				<ul class="bxslider">
 					<?php foreach ($gallery as $key => $image) : ?>
 						<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
-						<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+						<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+							<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+						</a>
 					<?php endforeach; ?>
 				</ul>
 			<?php else : ?>

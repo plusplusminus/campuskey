@@ -34,9 +34,13 @@ function ppm_scripts_and_styles() {
         
         wp_register_script( 'ppm', get_stylesheet_directory_uri() . '/library/js/ppm.js', array('third-party','packery','jquery'), '1.0.49',true);
 
+        wp_register_script( 'fancybox', get_stylesheet_directory_uri() . '/library/js/fancybox.js', array('jquery'), '2.1.5',true);
+
         wp_enqueue_script('packery');
 
         wp_localize_script( 'ppm', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));        
+
+        wp_enqueue_script('fancybox');
 
         wp_enqueue_script('ppm');
 

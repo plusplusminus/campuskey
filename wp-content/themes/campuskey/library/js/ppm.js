@@ -438,3 +438,7 @@ jQuery(window).resize(function(){
 
   equalheight('.section_news .article_blog');
 });
+
+jQuery(document).ready(function() {
+    jQuery(".fancybox").fancybox();
+});
