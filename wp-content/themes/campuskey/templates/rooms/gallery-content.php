@@ -14,12 +14,16 @@ $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_room_floorplan_
 						<ul class="bxslider">
 							<?php foreach ($gallery as $key => $image) : ?>
 								<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
-								<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+								<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+									<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
+								</a>
 							<?php endforeach; ?>
 						</ul>
 					<?php else : ?>
 						<figure class="post-header_image">
-							<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+							<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+								<?php the_post_thumbnail('full',array('class'=>'img-responsive')); ?>
+							</a>
 						</figure>
 					<?php endif; ?>
 				</aside>
