@@ -52,13 +52,13 @@ $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_building_floorp
 							<div class="col-md-4">
 								<?php $contact = get_post_meta($post->ID,'_ck_building_contact',true); ?>
 								<?php $address = get_post_meta($post->ID,'_ck_building_address',true); ?>
-								<?php $telephone = get_post_meta($post->ID,'_ck_building_telephone',true); ?>
+								<?php $telephone = get_post_meta($post->ID,'_ck_building_tel',true); ?>
 								<?php $email = get_post_meta($post->ID,'_ck_building_email',true); ?>
 								<div class="campus_contact">
 									<ul class="contact_details fa-ul">
 										<?php if ($contact) echo '<li> <i class="fa-li fa fa-user"></i><span>'.$contact.'</span></li>'; ?>
 										<?php if ($email) echo '<li> <i class="fa-li fa fa-envelope-o"></i><span>'.$email.'<span></li>'; ?>
-										<?php if ($telephone) echo '<li> <i class="fa-li fa fa-tellephone"></i><span>'.$telephone.'<span></li>'; ?>
+										<?php if ($telephone) echo '<li> <i class="fa-li fa fa-phone"></i><span>'.$telephone.'<span></li>'; ?>
 										<?php if ($address) echo '<li> <i class="fa-li fa fa-map-marker"></i><span>'.$address.'<span></li>'; ?>
 									</ul>
 								</div>

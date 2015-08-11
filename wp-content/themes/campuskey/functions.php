@@ -19,7 +19,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 require('classes/theme-cpt.php');
 
-add_image_size( 'blog-custom', 1024, 479, true );
+add_image_size( 'blog-custom', 800, 800, false );
 
 
 add_action( 'wp_enqueue_scripts', 'ppm_scripts_and_styles', 999 );
