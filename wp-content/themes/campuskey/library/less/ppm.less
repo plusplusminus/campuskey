@@ -278,7 +278,7 @@ body {
 	}
 
 	.campuses_title {
-		.ribbon(@brand-green);
+		.ribbon(@brand-purple);
 	}
 }
 
@@ -993,21 +993,29 @@ body .gform_wrapper {
 	}
 	.gform_body{
 		padding: 0 20px;
-		#gform_page_4_2,
-		#gform_page_4_3,
-		#gform_page_5_2,
-		#gform_page_5_3{
-			.gform_fields .gfield_label{
-				font-family: @font-family-heading;
-				font-size: @font-size-large;
-				font-weight: normal;
-				text-transform: uppercase;
-				color: @gray-dark;
-			}
-		}
 		.gform_fields{
 			.gfield{
 				margin-bottom: 20px;
+				&.no-label label.gfield_label{
+					// custom no-label class
+					display: none;
+				}
+				&.simple-label label.gfield_label{
+					// custom simple-label class
+					font-family: @font-family-heading;
+					color: @gray-dark;
+					font-size: @font-size-large;
+					font-weight: normal;
+					text-transform: uppercase;
+				}
+				&.blue-label label.gfield_label{
+					// custom blue-label class
+					color: @brand-blue;
+				}
+				&.no-field input{
+					// custom no-field class
+					display: none;
+				}
 				.gfield_label{
 					color: @brand-green;
 					font-family: @font-family-script;

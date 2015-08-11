@@ -82,4 +82,3 @@ global $tpb_options;
 		</div>
 	</div>
 </main>
-
