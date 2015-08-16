@@ -383,24 +383,53 @@ jQuery(window).resize(function() {
     jQuery('.border-campus').css('border-bottom-width',camp_height);
 })
 
-function init() {
-    window.addEventListener('scroll', function(e) {
-        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 200,
-            header = document.querySelector("header");
-        if (distanceY > shrinkOn) {
-            classie.add(header, "smaller");
-        } else {
-            if (classie.has(header, "smaller")) {
-                classie.remove(header, "smaller");
-            }
+
+
+
+// NEW TEST
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = jQuery('header').outerHeight();
+
+jQuery(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = jQuery(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        jQuery('header').removeClass('bigger').addClass('smaller');
+    } else {
+        // Scroll Up
+        if(st + jQuery(window).height() < jQuery(document).height()) {
+            jQuery('header').removeClass('smaller').addClass('bigger');
         }
-    });
-
-
+    }
+    
+    lastScrollTop = st;
 }
-window.onload = init();
 
+
+
+
+// Equal Height
 equalheight = function(container){
 
 var currentTallest = 0,
