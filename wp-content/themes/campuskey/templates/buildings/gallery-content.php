@@ -15,9 +15,11 @@ $image = wp_get_attachment_image( get_post_meta( $post->ID, '_ck_building_floorp
 						<ul class="bxslider">
 							<?php foreach ($gallery as $key => $image) : ?>
 								<?php $image_attributes_large = wp_get_attachment_image_src( $key,'full' ); ?>
-								<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
-									<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');"></li>
-								</a>
+								
+								<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
+									<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>"></a>
+								</li>
+								
 							<?php endforeach; ?>
 						</ul>
 					<?php else : ?>

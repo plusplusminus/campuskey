@@ -502,6 +502,14 @@ class ckCustomPostTypes {
 
 		// Id's for group's fields only need to be unique for the group. Prefix is not needed.
 		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Child?',
+		    'id'   => 'child',
+		    'type' => 'checkbox',
+		    'description' => 'Is this contact item an indented child item',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
 		    'name' => 'Entry Title',
 		    'id'   => 'title',
 		    'type' => 'text',
@@ -518,6 +526,13 @@ class ckCustomPostTypes {
 		$contact_meta->add_group_field( $group_field_id, array(
 		    'name' => 'Entry Telephone',
 		    'id'   => 'telephone',
+		    'type' => 'text',
+		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+		) );
+
+		$contact_meta->add_group_field( $group_field_id, array(
+		    'name' => 'Entry Mobile',
+		    'id'   => 'mobile',
 		    'type' => 'text',
 		    // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
 		) );

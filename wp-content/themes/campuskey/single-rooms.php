@@ -55,11 +55,13 @@
 					  				<?php else : ?>
 
 					  					<?php $image_attributes_large = wp_get_attachment_image_src( $plan['name_id'],'full' ); ?>
-					  						<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+					  						
 												<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
-													<div class="img_caption"><?php echo wpautop($plan['caption']); ?></div>
+													<a class="fancybox" rel="group" href="<?php echo $image_attributes_large[0];?>">
+														<div class="img_caption"><?php echo wpautop($plan['caption']); ?></div>
+													</a>
 												</li>
-											</a>
+											
 					  						
 
 					  				<?php endif; ?>

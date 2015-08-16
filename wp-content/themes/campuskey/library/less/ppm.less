@@ -810,6 +810,9 @@ body {
 		&:last-child{
 			border-radius: 0px;
 		}
+		&.child{
+			margin-left: 20px;
+		}
 		.list-group-static&:hover{
 			background-color: @brand-yellow;
 			.arrow(@brand-yellow);
@@ -863,6 +866,9 @@ body {
 		}
 		.collapse-content-holder{
 			border: 3px solid @brand-yellow;
+			&.child{
+				margin-left: 20px;
+			}
 			.faq-list-group&{
 				border-color: @brand-blue;
 				a{
@@ -1277,6 +1283,11 @@ body .gform_wrapper {
 	    right: 0;
 	    text-align: center;
     }
+    .fancybox{
+    	display: block;
+    	width: 100%;
+    	height: 100%;
+    }
 }
 
 .campus_content,
@@ -1510,7 +1521,7 @@ body .gform_wrapper {
 
 
 .article_blog{
-	margin-bottom: 1px;
+
 	.blog_image {
 		img{
 
