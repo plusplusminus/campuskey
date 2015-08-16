@@ -16,6 +16,10 @@
 	}
 }
 
+.letterspace{
+	letter-spacing: 3px;
+}
+
 
 .body-text(@align:left, @color:white){
 	font-family: @font-family-base;
@@ -179,6 +183,7 @@ body {
 }
 
 .header-main{
+	.container();
 	height:130px;
 	@media(min-width:@screen-sm-min) {
 		height: 130px;
@@ -193,7 +198,7 @@ body {
 	margin-top: 65px;
 	@media(min-width:@screen-md-min) {
 		img {
-			max-width: 262px;
+			max-width: 290px;
 		}
 	}
 }
