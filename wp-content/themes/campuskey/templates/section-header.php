@@ -11,9 +11,11 @@
 	         	<div class="slider-text-main">
 		     	 	<?php if ( have_posts() ) : ?>
 						<?php while ( have_posts() ) : the_post(); ?>
+
 							<div class="row">
 								<div class="slider-title">
-				              		<h1><span><?php the_title();?></span></h1>
+									<?php $slidetitle = get_post_meta($post->ID,'_ck_slide_title',true); ?>
+				              		<h1><span><?php echo $slidetitle ?></span></h1>
 				            	</div>
 				            </div>
 

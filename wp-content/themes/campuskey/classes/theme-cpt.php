@@ -164,6 +164,13 @@ class ckCustomPostTypes {
 	    ) );
 
 	    $page_meta->add_field( array(
+		    'name'    => 'Slider Title',
+		    'desc'    => 'enter the text to appear on the slider',
+		    'id'      => $prefix.'slide_title',
+		    'type'    => 'textarea'
+		) );
+
+	    $page_meta->add_field( array(
 		    'name'    => 'Page Header Content',
 		    'desc'    => 'enter the building header area content',
 		    'id'      => $prefix.'page_header',
