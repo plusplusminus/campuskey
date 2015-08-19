@@ -404,27 +404,27 @@ setInterval(function() {
     }
 }, 250);
 
-function hasScrolled() {
-    var st = jQuery(this).scrollTop();
+// function hasScrolled() {
+//     var st = jQuery(this).scrollTop();
     
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
+//     // Make sure they scroll more than delta
+//     if(Math.abs(lastScrollTop - st) <= delta)
+//         return;
     
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        jQuery('header').removeClass('bigger').addClass('smaller');
-    } else {
-        // Scroll Up
-        if(st + jQuery(window).height() < jQuery(document).height()) {
-            jQuery('header').removeClass('smaller').addClass('bigger');
-        }
-    }
+//     // If they scrolled down and are past the navbar, add class .nav-up.
+//     // This is necessary so you never see what is "behind" the navbar.
+//     if (st > lastScrollTop && st > navbarHeight){
+//         // Scroll Down
+//         jQuery('header').removeClass('bigger').addClass('smaller');
+//     } else {
+//         // Scroll Up
+//         if(st + jQuery(window).height() < jQuery(document).height()) {
+//             jQuery('header').removeClass('smaller').addClass('bigger');
+//         }
+//     }
     
-    lastScrollTop = st;
-}
+//     lastScrollTop = st;
+// }
 
 
 
