@@ -86,9 +86,8 @@ $connected = new WP_Query( array(
 								</div>
 							</li>
 						<?php else: ?>
-							 <?php if ($count == 6) : ?>
+							 <?php if ($count == 9) : ?>
 							 	<div class="clearfix"></div><br>
-							 	<li class="feature_list--list"><strong>Also included:</strong> </li>
 							 <?php endif; ?>
 							<li class="feature_list--list"><?php the_title(); ?></li>
 						<?php endif; ?>

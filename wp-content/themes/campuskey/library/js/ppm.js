@@ -6,7 +6,7 @@ jQuery.fn.highlight = function (str, className) {
     });
 };
 
-jQuery("li a").highlight("yl","letterspace");
+jQuery(".no-touch #menu-main li a").highlight("yl","letterspace");
 jQuery(".header-title span").highlight("pe","letterspace");
 jQuery(".header-title span").highlight("ge","letterspace");
 jQuery(".footer-logo span").highlight("student","wordspace");
