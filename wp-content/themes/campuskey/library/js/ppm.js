@@ -57,7 +57,7 @@ function addListeners() {
 }
 
 function resize() {
-    console.log('das');
+
     var height = window.innerHeight;
     
     largeHeader = document.getElementById('home_header');
@@ -200,9 +200,7 @@ function initMap() {
         });
 
     }   
-    else {
-        console.log("no map");
-    }
+
 }
 
 jQuery(document).ready(function() {
