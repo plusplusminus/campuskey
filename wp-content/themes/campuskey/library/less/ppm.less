@@ -202,7 +202,7 @@ body {
 }
 
 .header-main .logo { 
-	margin-top: 45px;
+	margin-top: 38px;
 	img {
 		max-width: 290px;
 	}
@@ -385,6 +385,9 @@ body {
 
 
 .vertical-ribbon svg {
+	.touch &{
+		display: none;
+	}
 	width: 230px;
 	-webkit-transform:  rotate(180deg) translateX(50%);
 	-ms-transform:  rotate(180deg) translateX(50%);
@@ -468,6 +471,19 @@ body {
 
 .room-text { z-index: 99; position: relative; }
 
+
+.touch .campus-grid-main .campus-title .view-more{display: none important;}
+.touch .room-grid-main .room-title .view-more{display: none important;}
+
+.no-touch .room-grid-main {
+	.room-title .view-more {
+		transform: translateY(70px);
+		-webkit-transform: translateY(70px);
+		transition: transform 0.4s;
+		-webkit-transition: all 0.4s;
+		display:inline-block;
+	}
+}
 .room-grid-main {
 	.room-title .view-more {
 		transform: translateY(70px);
@@ -502,7 +518,6 @@ body {
 	}
 
 	&:hover {
-
 		.room-title .view-more{
 			transform: translateY(0);
 			-webkit-transform: translateY(0);
@@ -511,7 +526,6 @@ body {
 		.room-title h2 {
 	  		top: 0;
 		}
-
 	}
 }
 
