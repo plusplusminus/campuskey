@@ -47,7 +47,7 @@ global $tpb_options;
 						</div>
 
 						<div class="row">
-							<div class="col-md-4">
+							<div class="col-sm-4">
 								<?php $contact = get_post_meta($post->ID,'_ck_campus_contact',true); ?>
 								<?php $address = get_post_meta($post->ID,'_ck_campus_address',true); ?>
 								<?php $telephone = get_post_meta($post->ID,'_ck_campus_telephone',true); ?>
@@ -61,16 +61,14 @@ global $tpb_options;
 									</ul>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="pull-left">
-									<div class="book-now campus_contact--book text-center"> 
-						  				<?php $booknow_image = $tpb_options['booknow_image']['url']; ?>
-						  				<?php $booknow_link = $tpb_options['campuskey_booknow']; ?>
-						  				<a href="<?php echo $booknow_link;?>" title="Book now!">
-						  					<img class="img-responsive" src="<?php echo $booknow_image;?>" alt="Book Now!"/>
-						  				</a> 
-						  			</div>
-						  		</div>
+							<div class="col-sm-6">
+								<div class="book-now campus_contact--book text-center"> 
+					  				<?php $booknow_image = $tpb_options['booknow_image']['url']; ?>
+					  				<?php $booknow_link = $tpb_options['campuskey_booknow']; ?>
+					  				<a href="<?php echo $booknow_link;?>" title="Book now!">
+					  					<img class="img-responsive" src="<?php echo $booknow_image;?>" alt="Book Now!"/>
+					  				</a> 
+					  			</div>
 					  		</div>
 						</div>
 
