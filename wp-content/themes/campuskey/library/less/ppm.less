@@ -52,7 +52,10 @@
   	right: 0;
   	z-index: 1;
   	border-bottom-color: @color;
-	border-left-color: transparent;
+  	border-left-color: @color;
+  	@media(min-width:@screen-md-min) {
+		border-left-color: transparent;
+	}
 	border-style: solid;
 }
 
@@ -62,6 +65,10 @@
   	right: 0;
   	z-index: 1;
 	border-top-color: transparent;
+	border-top-color: @color;
+  	@media(min-width:@screen-md-min) {
+		border-top-color: transparent;
+	}
 	border-left-color: @color;
 	border-style: solid;
 }
@@ -79,7 +86,7 @@
 .ribbon(@color:@brand-green) {
 	background:transparent;
 	color: #fff;
-	font-size: 29px;
+	font-size: 38px;
 	font-family: @font-family-script;
 	line-height: 1.4em;
 	display: inline-block;
@@ -112,11 +119,11 @@
 		display: block;
 		position: absolute;
 		top: 0;
-		left: -30px;
-		border-top: 18px solid @color;
-		border-bottom: 18px solid @color;
-		border-right: 18px solid @color;
-		border-left: 18px solid transparent;
+		left: -56px;
+		border-top: 28px solid @color;
+		border-bottom: 28px solid @color;
+		border-right: 28px solid @color;
+		border-left: 28px solid transparent;
 
 		@media(min-width:@screen-sm-min) {
 			left: -68px;
@@ -136,12 +143,12 @@
 		
 		background: transparent;
 
-		right: -30px;
+		right: -56px;
 
-		border-top: 18px solid @color;
-		border-bottom: 18px solid @color;
-		border-right: 18px solid transparent;
-		border-left: 18px solid @color;
+		border-top: 28px solid @color;
+		border-bottom: 28px solid @color;
+		border-right: 28px solid transparent;
+		border-left: 28px solid @color;
 
 		@media(min-width:@screen-sm-min) {
 			right: -68px;
@@ -156,18 +163,20 @@
 .arrow(@color:@brand-green) {
 	position: relative;
 	&:after {
-		left: 100%;
-		top: 50%;
-		border: solid transparent;
-		content: " ";
-		height: 0;
-		width: 0;
-		position: absolute;
-		pointer-events: none;
-		border-color: rgba(136, 183, 213, 0);
-		border-left-color: @color;
-		border-width: 25px;
-		margin-top: -25px;
+		@media(min-width:@screen-sm-min) {
+			left: 100%;
+			top: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(136, 183, 213, 0);
+			border-left-color: @color;
+			border-width: 25px;
+			margin-top: -25px;
+		}
 	}
 }
 
@@ -177,10 +186,10 @@
 	}
 }
 body {
-	padding-top:130px;
+	padding-top:214px;
 	font-weight: 200;
 	@media(min-width:@screen-sm-min) {
-		padding-top: 130px;
+		padding-top: 170px;
 	}
 
 	@media(min-width:1025px) {
