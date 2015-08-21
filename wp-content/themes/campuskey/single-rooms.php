@@ -44,11 +44,11 @@
 					  					<?php if($key) : ?>
 
 					  						<?php $image_attributes_large = wp_get_attachment_image_src( $plan['name_id'],'full' ); ?>
-											<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
-												<a class="fancybox" data-fancybox-title="<?php echo wpautop($plan['caption']); ?>" rel="group1" href="<?php echo $image_attributes_large[0];?>">
+					  						<a class="fancybox" data-fancybox-title="<?php echo wpautop($plan['caption']); ?>" rel="group1" href="<?php echo $image_attributes_large[0];?>">
+												<li class="slide" style="background-image:url('<?php echo $image_attributes_large[0];?>');">
 													<div class="img_caption"><?php echo wpautop($plan['caption']); ?></div>
-												</a>
-											</li>
+												</li>
+											</a>
 					  						
 					  					<?php endif; ?>
 
