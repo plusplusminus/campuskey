@@ -12,6 +12,6 @@
 
 	<?php get_template_part('templates/section','campuses'); ?>
 
-	<?php get_template_part('templates/campuses/rooms'); ?>
+	<?php get_template_part('templates/lifestyle/rooms'); ?>
 
 <?php get_footer(); ?>

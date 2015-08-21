@@ -139,6 +139,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "wp-content/themes/campuskey/library/less/single/single.less",
+			"settings":
+			{
+				"buffer_size": 8128,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -476,8 +484,39 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "wp-content/themes/campuskey/library/less/single/single.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8128,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								582,
+								582
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -515,7 +554,7 @@
 		"cols":
 		[
 			0.0,
-			0.576954925115,
+			0.369642857143,
 			0.681962845622,
 			1.0
 		],

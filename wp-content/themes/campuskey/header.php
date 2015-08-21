@@ -49,7 +49,7 @@
 									$site_name = get_bloginfo('name');
 									$site_description = get_bloginfo('description');
 									if ( is_ssl() ) $logo_url = str_replace( 'http://', 'https://', $logo_url );
-									echo '<a href="' . esc_url( $site_url ) . '" title="' . esc_attr( $site_description ) . '"><img src="'.$logo_url.'" alt="'.esc_attr($site_name).'"/></a>' . "\n";
+									echo '<a href="' . esc_url( $site_url ) . '" title="' . esc_attr( $site_description ) . '"><img data-pin-no-hover="true" src="'.$logo_url.'" alt="'.esc_attr($site_name).'"/></a>' . "\n";
 									
 								} // End IF Statement */
 								?> 
