@@ -139,14 +139,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "wp-content/themes/campuskey/library/less/single/single.less",
-			"settings":
-			{
-				"buffer_size": 8128,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -215,22 +207,26 @@
 	],
 	"file_history":
 	[
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/header.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/lifestyle/rooms.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/template-lifestyle.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/single-rooms.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/gallery-content.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/buildings/gallery-content.php",
+		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/single/single.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/theme.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/responsive.less",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/gallery-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/ppm.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/lifestyle/features-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/js/ppm.js",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/style.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/section-header.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/single-rooms.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/classes/theme-cpt.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/contact/page-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-config.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/library/less/fonts.less",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms/gallery-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/functions.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/buildings/gallery-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/blog/page-content.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/buildings/header.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/buildings.php",
@@ -243,7 +239,6 @@
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/template-home.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/rooms.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/docs/page-content.php",
-		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/header.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/archive.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/rooms/archive.php",
 		"/Users/iaanvn/Sites/CampusKey/wp-content/themes/campuskey/templates/campuses/header.php",
@@ -322,6 +317,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"fancybox",
 			".slider-area",
 			".footer-left",
 			"lifestyle",
@@ -448,8 +444,7 @@
 			".border-bottom-left",
 			"family",
 			"css-orange",
-			"brand-yellow",
-			"slider"
+			"brand-yellow"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -484,39 +479,13 @@
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "wp-content/themes/campuskey/library/less/single/single.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								582,
-								582
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -545,22 +514,28 @@
 				1
 			],
 			[
-				2,
 				0,
-				3,
-				1
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.369642857143,
-			0.681962845622,
+			0.945533769063,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.930167597765,
 			1.0
 		]
 	},
