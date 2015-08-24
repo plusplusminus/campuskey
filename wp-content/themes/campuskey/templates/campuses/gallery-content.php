@@ -55,7 +55,7 @@ global $tpb_options;
 								<div class="campus_contact">
 									<ul class="contact_details fa-ul">
 										<?php if ($contact) echo '<li> <i class="fa-li fa fa-user"></i><span>'.$contact.'</span></li>'; ?>
-										<?php if ($email) echo '<li> <i class="fa-li fa fa-envelope-o"></i><span>'.$email.'<span></li>'; ?>
+										<?php if ($email) echo '<li> <i class="fa-li fa fa-envelope-o"></i><span><a href="mailto:'.$email.'">'.$email.'</a><span></li>'; ?>
 										<?php if ($telephone) echo '<li> <i class="fa-li fa fa-tellephone"></i><span>'.$telephone.'<span></li>'; ?>
 										<?php if ($address) echo '<li> <i class="fa-li fa fa-map-marker"></i><span>'.$address.'<span></li>'; ?>
 									</ul>
