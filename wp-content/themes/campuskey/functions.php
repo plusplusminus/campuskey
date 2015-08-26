@@ -46,7 +46,6 @@ function new_excerpt_more( $more ) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
-
 require('classes/theme-cpt.php');
 
 add_image_size( 'blog-custom', 800, 800, false );

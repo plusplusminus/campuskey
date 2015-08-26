@@ -483,6 +483,13 @@ class ckCustomPostTypes {
 	        'sortable' => 'any'
 	    ) );
 
+	    p2p_register_connection_type( array(
+	        'name' => 'campuses_to_rooms',
+	        'from' => 'campuses',
+	        'to' => 'rooms',
+	        'sortable' => 'any'
+	    ) );
+
 	    $contact_meta = new_cmb2_box( array(
 	        'id'            => $prefix . 'contact_metabox',
 	        'title'         => __( 'Contact Meta', 'cmb2' ),

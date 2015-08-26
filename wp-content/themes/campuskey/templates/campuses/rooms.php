@@ -5,13 +5,11 @@ global $post;
 $tmp = $post->post_name;
 $tmp_id = $post->ID;
 
-$query_args = array(
-	'post_type' => 'rooms', 
-	'posts_per_page' => 3,
-	'orderby' => 'menu_order'
-);
-
-query_posts( $query_args );
+$connected = new WP_Query( array(
+  'connected_type' => 'campuses_to_rooms',
+  'connected_items' => get_queried_object(),
+  'nopaging' => true,
+) );
 
 ?>
 
@@ -26,10 +24,12 @@ query_posts( $query_args );
 			</div>
 			<div class="section-grid-area">
 		  		<div class="container">
-		  			<?php if ( have_posts() ) : $count = 0; ?>
-						<ul>
-							<?php while ( have_posts() ) : the_post(); $count++;?>
-								<div class="room-grid-main">
+		  			<?php if ( $connected->have_posts() ) : $count = 0; ?>
+						<div class="row">
+							<?php while ( $connected->have_posts() ) : $connected->the_post(); $count++;?>
+								<?php $class=""; ?>
+								<?php if ($connected->post_count < 3 && $count == 1) $class = 'col-md-offset-2'; ?>
+								<div class="room-grid-main <?php echo  $class; ?>">
 							  		<div class="room-img"> 
 										<?php the_post_thumbnail('full',array('class'=>'img-responsive'));?>
 										<div class="slider-shadow"></div>
@@ -48,7 +48,7 @@ query_posts( $query_args );
 									<a class="grid-link" href="<?php echo $link; ?>" title="<?php the_title();?>">&nbsp;</a>
 								</div>
 							<?php endwhile; ?>
-						</ul>
+						</div>
 					<?php endif; ?>
 					<?php wp_reset_query(); ?>
 					
