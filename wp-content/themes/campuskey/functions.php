@@ -46,6 +46,7 @@ function new_excerpt_more( $more ) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+
 require('classes/theme-cpt.php');
 
 add_image_size( 'blog-custom', 800, 800, false );
@@ -399,7 +400,7 @@ function get_map() {
 }
 
 add_action("wp_ajax_get_cmap_options", "get_cmap");
-add_action("wp_ajax_nopriv_cget_map_options", "get_cmap");
+add_action("wp_ajax_nopriv_get_cmap_options", "get_cmap");
 
 function get_cmap() {
 
@@ -717,5 +718,56 @@ class GWCalcSubtotal {
 }
 
 new GWCalcSubtotal();
+
+/**
+ * to exclude field from notification add 'exclude[ID]' option to {all_fields} tag
+ * 'include[ID]' option includes HTML field / Section Break field description / Signature image in notification
+ * see http://www.gravityhelp.com/documentation/page/Merge_Tags for a list of standard options
+ * example: {all_fields:exclude[2,3]}
+ * example: {all_fields:include[6]}
+ * example: {all_fields:include[6],exclude[2,3]}
+ */
+add_filter( 'gform_merge_tag_filter', 'all_fields_extra_options', 11, 5 );
+function all_fields_extra_options( $value, $merge_tag, $options, $field, $raw_value ) {
+    if ( $merge_tag != 'all_fields' ) {
+        return $value;
+    }
+
+    // usage: {all_fields:include[ID],exclude[ID,ID]}
+    $include = preg_match( "/include\[(.*?)\]/", $options , $include_match );
+    $include_array = explode( ',', rgar( $include_match, 1 ) );
+
+    $exclude = preg_match( "/exclude\[(.*?)\]/", $options , $exclude_match );
+    $exclude_array = explode( ',', rgar( $exclude_match, 1 ) );
+
+    $log = "all_fields_extra_options(): {$field['label']}({$field['id']} - {$field['type']}) - ";
+
+    if ( $include && in_array( $field['id'], $include_array ) ) {
+        switch ( $field['type'] ) {
+            case 'html' :
+                $value = $field['content'];
+                break;
+            case 'section' :
+                $value .= sprintf( '<tr bgcolor="#FFFFFF">
+                                                        <td width="20">&nbsp;</td>
+                                                        <td>
+                                                            <font style="font-family: sans-serif; font-size:12px;">%s</font>
+                                                        </td>
+                                                   </tr>
+                                                   ', $field['description'] );
+                break;
+            case 'signature' :
+                $url = GFSignature::get_signature_url( $raw_value );
+                $value = "<img alt='signature' src='{$url}'/>";
+                break;
+        }
+        GFCommon::log_debug( $log . 'included.' );
+    }
+    if ( $exclude && in_array( $field['id'], $exclude_array ) ) {
+        GFCommon::log_debug( $log . 'excluded.' );
+        return false;
+    }
+    return $value;
+}
 
 ?>
